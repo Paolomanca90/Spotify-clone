@@ -22,5 +22,3 @@ const getData = function(){
     })
 }
 
-
-getData()

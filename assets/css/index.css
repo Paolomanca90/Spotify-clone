@@ -62,4 +62,10 @@ aside {
 
 .time {
   width: 15%;
+}
+
+@media screen and (max-width: 1199px) {
+  #center {
+    width: 80%;
+  }
 }/*# sourceMappingURL=index.css.map */
