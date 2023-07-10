@@ -19,12 +19,15 @@
   </head>
   <body class="d-flex h-100">
     <nav
-      class="navbar navbar-expand-lg bg-dark d-flex justify-content-start flex-column"
+      class="navbar navbar-expand-lg d-flex justify-content-start flex-column"
     >
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="container-fluid h-100 align-items-start px-2">
+        <div
+          class="collapse navbar-collapse flex-column"
+          id="navbarSupportedContent"
+        >
           <ul
-            class="navbar-nav mb-2 mb-lg-0 d-flex flex-column h-100 w-100 text-light"
+            class="navbar-nav mb-2 mb-lg-0 d-flex flex-column w-100 text-light rounded bg-dark"
           >
             <li class="nav-item">
               <a class="nav-link active text-light" aria-current="page" href="#"
@@ -36,6 +39,10 @@
                 ><i class="bi bi-search"></i> Cerca</a
               >
             </li>
+          </ul>
+          <ul
+            class="navbar-nav mt-2 mb-2 mb-lg-0 d-flex flex-column w-100 text-light rounded bg-dark"
+          >
             <li class="nav-item d-flex flex-column">
               <div>
                 <div class="d-flex align-items-center justify-content-between">
@@ -47,10 +54,20 @@
                     <i class="bi bi-arrow-right-short mx-2"></i>
                   </div>
                 </div>
-                <ul id="nav-links" class="d-flex p-1">
-                  <li class="list-group-item me-2 rounded-pill">Playlist</li>
-                  <li class="list-group-item me-2 rounded-pill">Artists</li>
-                  <li class="list-group-item me-2 rounded-pill">Album</li>
+                <ul id="nav-links" class="d-flex p-2 mb-2">
+                  <li class="list-group-item me-2 rounded-pill">
+                    <a href="" class="text-decoration-none text-light"
+                      >Playlist</a
+                    >
+                  </li>
+                  <li class="list-group-item me-2 rounded-pill">
+                    <a href="" class="text-decoration-none text-light"
+                      >Artists</a
+                    >
+                  </li>
+                  <li class="list-group-item me-2 rounded-pill">
+                    <a href="" class="text-decoration-none text-light">Album</a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -100,7 +117,7 @@
         </div>
       </div>
     </nav>
-    <div id="center">
+    <div id="center" class="rounded bg-success mt-2">
       <header class="d-flex justify-content-between p-3">
         <div id="main-buttons">
           <button
@@ -139,29 +156,65 @@
         <h2 class="mt-4 fw-bold">Buon pomeriggio</h2>
       </main>
     </div>
-    <aside id="right" class="p-3">
-      <div class="friend">
+    <aside id="right" class="p-3 d-flex flex-column rounded bg-dark m-2">
+      <div id="aside-title" class="d-flex justify-content-between mb-3">
         <h6>Friends activity</h6>
         <div>
-          <p><strong></strong></p>
-          <p></p>
-          <p><i></i></p>
+          <i class="bi bi-person-plus pe-1"></i>
+          <i class="bi bi-x-lg"></i>
+        </div>
+      </div>
+      <div class="friend mb-3">
+        <div>
+          <div class="d-flex">
+            <img src="" alt="Simone" />
+            <p class="ps-2 m-0"><strong>Simone Potenza</strong></p>
+          </div>
+          <p class="m-0">Forte Forte Forte • Raffella Carrà</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> A far l'amore
+            comuncia tu
+          </p>
+        </div>
+        <div></div>
+      </div>
+      <div class="friend mb-3">
+        <div>
+          <div class="d-flex">
+            <img src="" alt="Antonio" />
+            <p class="ps-2 m-0"><strong>Antonio Girardi</strong></p>
+          </div>
+          <p class="m-0">Forte Forte Forte • Raffella Carrà</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> A far l'amore
+            comuncia tu
+          </p>
+        </div>
+        <div></div>
+      </div>
+      <div class="friend mb-3">
+        <div>
+          <div class="d-flex">
+            <img src="" alt="Nino" />
+            <p class="ps-2 m-0"><strong>Nino Traverso</strong></p>
+          </div>
+          <p class="m-0">7th element • Vitas</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> 7th element
+          </p>
         </div>
         <div></div>
       </div>
       <div class="friend">
         <div>
-          <h4></h4>
-          <p></p>
-          <p><i></i></p>
-        </div>
-        <div></div>
-      </div>
-      <div class="friend">
-        <div>
-          <h4></h4>
-          <p></p>
-          <p><i></i></p>
+          <div class="d-flex">
+            <img src="" alt="Claudio" />
+            <p class="ps-2 m-0"><strong>Claudio Galano</strong></p>
+          </div>
+          <p class="m-0">Timidamente io • Ruggero dei Timidi</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> Timidamente io
+          </p>
         </div>
         <div></div>
       </div>
