@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: circular;
   background-color: black;
@@ -27,7 +28,15 @@ header {
 }
 
 aside {
-  width: 15%;
+  width: 20%;
+  background-color: black;
+  color: white;
+}
+
+footer {
+  background-color: black;
+}
+footer #volumeScrollBar {
   background-color: black;
 }
 
@@ -40,11 +49,6 @@ aside {
   font-size: 0.9em;
   padding: 0.2em 0.7em;
   background-color: rgb(74, 74, 74);
-}
-
-aside {
-  background-color: black;
-  color: white;
 }
 
 #aside-title i {
@@ -65,7 +69,7 @@ aside {
 }
 
 .time {
-  width: 15%;
+  width: 25%;
 }
 
 #center {
@@ -73,4 +77,59 @@ aside {
 }
 #center #first-row .col .prima-riga {
   background-color: rgba(255, 255, 255, 0.217);
+}
+
+.search-box .icon {
+  cursor: pointer;
+  width: 25px;
+  height: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 25px;
+  color: lightgray;
+  background: gray;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkbox:checked ~ .search-box .icon {
+  width: 40px;
+  color: lightgray;
+  background: gray;
+  border-radius: 0 25px 25px 0;
+}
+
+.container .search-box {
+  position: relative;
+  height: 25px;
+  max-width: 25px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+#checkbox:checked ~ .search-box {
+  max-width: 180px;
+}
+
+.search-box input {
+  font-size: 0.8em;
+  position: absolute;
+  outline: none;
+  border: none;
+  background: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  padding-left: 10px;
+}
+
+#checkbox {
+  display: none;
 }/*# sourceMappingURL=index.css.map */

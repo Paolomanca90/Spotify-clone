@@ -1,14 +1,15 @@
-const firstRow = document.getElementById("first-row")
-const secondRow = document.getElementById("second-row")
-const thirdRow = document.getElementById("third-row")
-const fourthRow = document.getElementById("fourth-row")
-const searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock"
-const albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/"
+let firstRow = document.getElementById("first-row")
+let secondRow = document.getElementById("second-row")
+let thirdRow = document.getElementById("third-row")
+let fourthRow = document.getElementById("fourth-row")
+let searchUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock"
+let myUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+let albumUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 
-const choosenAlbums = []
-const forYouAlbum = []
-const mixAlbum = []
-const recentAlbum = []
+let choosenAlbums = []
+let forYouAlbum = []
+let mixAlbum = []
+let recentAlbum = []
 
 const randomAlbums = function(){
     fetch(searchUrl)
@@ -63,7 +64,7 @@ const showPlaylist = function() {
         let newPlaylist = document.createElement("li")
         newPlaylist.classList.add("text-secondary")
         newPlaylist.innerHTML = `
-        <a href="#" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover mx-1">${playlist}</a>
+        <a href="#" class="link-secondary fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${playlist}</a>
         `
         ulPlaylist.appendChild(newPlaylist)
     })
@@ -118,7 +119,7 @@ const createForYou = function() {
                     <img src="${data.cover_medium}" class="card-img rounded-2" alt="cover">
                     <div class="card-body p-0 mt-2">
                         <h5 class="card-title p-0">Daily Mix ${i+1}</h5>
-                        <a href="artistPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
+                        <a href="albumPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
                         <a href="artistPage.html?id=${data.artist.id}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-block">${data.artist.name}</a>
                     </div>
                 </div>
@@ -173,7 +174,7 @@ const mixForYou = function() {
                     <img src="${data.cover_medium}" class="card-img rounded-2" alt="cover">
                     <div class="card-body p-0 mt-2">
                         <h5 class="card-title p-0">Mix ${data.artist.name}</h5>
-                        <a href="artistPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
+                        <a href="albumPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
                         <a href="artistPage.html?id=${data.artist.id}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-block">${data.artist.name}</a>
                     </div>
                 </div>
@@ -228,7 +229,7 @@ const recentForYou = function() {
                     <img src="${data.cover_medium}" class="card-img rounded-2" alt="cover">
                     <div class="card-body p-0 mt-2">
                         <h5 class="card-title p-0">${data.artist.name}</h5>
-                        <a href="artistPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
+                        <a href="albumPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
                         <a href="artistPage.html?id=${data.artist.id}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-block">${data.artist.name}</a>
                     </div>
                 </div>
@@ -242,3 +243,77 @@ const recentForYou = function() {
         }
     )
 }
+
+const searchForm = document.querySelector('#searchB form')
+searchForm.addEventListener('submit', function(e){
+  e.preventDefault()
+  const mySearch = document.querySelector('#searchF')
+  const myValue = mySearch.value
+  searchResult(myValue)
+  mySearch.value = ''
+})
+
+const searchResult = function(value){
+    fetch(myUrl + value)
+        .then((res)=>{
+            if(res.ok){
+                return res.json()
+            }else{
+                throw new Error()
+            }
+        })
+        .then((data)=>{
+            firstRow.innerHTML = ''
+            secondRow.innerHTML = ''
+            thirdRow.innerHTML = ''
+            fourthRow.innerHTML = ''
+            choosenAlbums = []
+            for (let i=0; i<6; i++){
+                let num = Math.floor(Math.random()*data.data.length)
+                choosenAlbums.push(data.data[num].album.id)
+            }
+            getAlbum() 
+            forYouAlbum = []
+            for (let i=0; i<4; i++){
+                let num = Math.floor(Math.random()*data.data.length)
+                forYouAlbum.push(data.data[num].album.id)   
+            } 
+            createForYou()
+            mixAlbum = []
+            for (let i=0; i<4; i++){
+                let num = Math.floor(Math.random()*data.data.length)
+                mixAlbum.push(data.data[num].album.id)   
+            } 
+            mixForYou()  
+            recentAlbum = []
+            for (let i=0; i<4; i++){
+                let num = Math.floor(Math.random()*data.data.length)
+                recentAlbum.push(data.data[num].album.id)   
+            } 
+            recentForYou() 
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+}
+
+const homeB = function(){
+    const iconHomeEmpty = document.querySelector('#home-empty')
+    iconHomeEmpty.classList.add('d-none')
+    const iconHomeFill = document.querySelector('.bi-house-door-fill')
+    iconHomeFill.classList.remove('d-none')
+}
+
+const homeButton = document.querySelector('#homeB a')
+homeButton.addEventListener('click', homeB)
+
+const searchB = function(){
+    const searchButton = document.querySelector('#searchB a')
+    searchButton.classList.add('d-none')
+    const searchForm = document.querySelector('#searchB form')
+    searchForm.classList.remove('d-none')
+}
+
+const searchButton = document.querySelector('#searchB a')
+searchButton.addEventListener('click', searchB)
+
