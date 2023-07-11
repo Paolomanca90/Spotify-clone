@@ -1,4 +1,4 @@
-const UrlArtist =  "https://striveschool-api.herokuapp.com/api/deezer/album/"
+const UrlArtist =  "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 
 const coverImgRef = document.getElementById("coverImageArtist")
 const artistNameRef = document.getElementById("artistName")
@@ -19,9 +19,17 @@ const getArtist = function(artistId){
     })
     .then ((artists) => {
         console.log("artists", artists)
+        coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`
+        coverImgRef.style.backgroundSize = "cover"
+        coverImgRef.style.height = "350px"
+        coverImgRef.style.backgroundPositionY = "center"
         artistNameRef.innerHTML=`
         <h2>${artists.name}</h2>
         `
+        monthlyListenersRef.innerHTML=`
+        <h3>${artists.nb_fan} ascoltatori mensili</h3>
+        `
+
     })
     .catch((err) => {
         console.log(err)
