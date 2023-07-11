@@ -130,7 +130,7 @@ input[type="range"]:focus::-ms-fill-upper {
 
 /* HAD TROUBLES WITH RESIZING THE IMAGE CONTAINER FOR THE SONG IMAGE*/
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   #imageContainer img {
     border-radius: 50%;
     overflow: hidden;
