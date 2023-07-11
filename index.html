@@ -130,6 +130,9 @@
             </ul>
           </div>
         </div>
+        <div id="playlist-section" class="mt-2">
+          <ul id="lista-playlist" class="list-unstyled"></ul>
+        </div>
       </nav>
       <div id="center" class="rounded mt-2">
         <header
@@ -263,8 +266,8 @@
               <i class="bi bi-skip-backward px-3"></i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
+                width="32"
+                height="32"
                 fill="currentColor"
                 class="bi bi-play-circle-fill"
                 viewBox="0 0 16 16"
@@ -277,7 +280,7 @@
               <i class="bi bi-repeat px-2"></i>
             </div>
             <div class="d-flex align-items-center justify-content-between">
-              <p>0:05</p>
+              <p class="m-0">0:05</p>
               <input
                 type="range"
                 name="bi-volume-down"
@@ -285,26 +288,38 @@
                 min="0"
                 max="100"
                 value="30"
+                class="bg-dark px-2"
               />
-              <p>4:26</p>
+              <p class="m-0">4:26</p>
             </div>
           </div>
           <div
             class="col-4 d-flex flex-row align-items-center justify-content-end"
           >
-            <i class="bi bi-mic px-2"></i>
-            <i class="bi bi-menu-button-wide px-2"></i>
-            <i class="bi bi-speaker px-2"></i>
-            <i class="bi bi-volume-down px-2"></i>
+            <a href="#" class="text-decoration-none text-light"
+              ><i class="bi bi-mic px-2"></i
+            ></a>
+            <a href="#" class="text-decoration-none text-light"
+              ><i class="bi bi-menu-button-wide px-2"></i
+            ></a>
+            <a href="#" class="text-decoration-none text-light"
+              ><i class="bi bi-speaker px-2"></i
+            ></a>
+            <a href="#" class="text-decoration-none text-light"
+              ><i class="bi bi-volume-down px-2"></i
+            ></a>
             <input
               type="range"
               name="bi-volume-down"
               id="volumeScrollBar"
               min="0"
               max="100"
-              value="30"
+              value="60"
+              class="bg-dark"
             />
-            <i class="bi bi-arrows-angle-expand px-2"></i>
+            <a href="#" class="text-decoration-none text-light"
+              ><i class="bi bi-arrows-angle-expand px-2"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -316,5 +331,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/index.js"></script>
+    <script src="./scripts/player.js"></script>
   </body>
 </html>
