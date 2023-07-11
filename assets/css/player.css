@@ -87,3 +87,15 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #2497E3;
 }
+
+
+#imageContainer {
+  max-width: 60px;
+  max-height: 60px;
+  
+}
+
+#imageContainer img {
+  max-width: 60px;
+  max-height: 60px;
+}
