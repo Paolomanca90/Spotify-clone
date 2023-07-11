@@ -1,4 +1,27 @@
-/* -----------------------THIS FUNCTION CHANGES ICON OF THE HEART FROM "EMPTY" to "FILLED" ---------------------*/
+/* -----------------------THIS FUNCTION CHANGES ICON OF THE HEART ICON AT BIGGER BREAKPOINTS FROM "EMPTY" to "FILLED" ---------------------*/
+
+const heartIconBig = document.getElementById("heartIconBig");
+let isFilledBig = false;
+
+heartIconBig.addEventListener("click", function () {
+  if (isFilledBig) {
+    heartIconBig.classList.remove("bi-heart-fill");
+
+    heartIconBig.innerHTML = "";
+    heartIconBig.className = "bi bi-heart mx-2";
+
+    isFilledBig = false;
+  } else {
+    heartIconBig.classList.add("bi-heart-fill");
+
+    heartIconBig.innerHTML = "";
+    heartIconBig.className = "bi bi-heart-fill mx-2";
+
+    isFilledBig = true;
+  }
+});
+
+/* -----------------------THIS FUNCTION CHANGES ICON OF THE HEART AT SMALLER BREAKPOINTS FROM "EMPTY" to "FILLED" ---------------------*/
 
 const heartIcon = document.getElementById("heartIcon");
 let isFilled = false;
@@ -20,6 +43,7 @@ heartIcon.addEventListener("click", function () {
     isFilled = true;
   }
 });
+
 
 /* -----------------------THIS FUNCTION CHANGES THE SHUFFLE ICON COLOR FROM WHITE TO GREEN (AND VICE VERSA) ---------------------*/
 
@@ -52,3 +76,21 @@ colorToggleShuffle.addEventListener("click", function () {
     isWhiteShuffle = true;
   }
 });
+
+/* -----------------------THIS FUNCTION CHANGES THE SVG FROM "PLAY" to "PAUSE" --------------------- */
+
+const playPauseIcon = document.getElementById("playPause");
+playPauseIcon.addEventListener("click", function () {
+  playPauseIcon.classList.toggle("bi-play-circle-fill");
+  playPauseIcon.classList.toggle("bi-pause-circle-fill");
+});
+
+/* JS TO MAKE THE MD AND SM PLAY/PAUSE BUTTON CHANGE AT CLICK*/
+
+const playPauseSmallIcon = document.getElementById("playPauseSmall");
+playPauseSmallIcon.addEventListener("click", function () {
+  playPauseSmallIcon.classList.toggle("bi-play-fill");
+  playPauseSmallIcon.classList.toggle("bi-pause-fill");
+});
+
+/* ------------------------ LEFT SIDE TAKE IMAGE, SONG TITLE & ARTIST NAME -----------------*/
