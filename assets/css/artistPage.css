@@ -22,8 +22,35 @@ body {
   }
   
   aside {
+    background-color: black;
+    color: white;
+  }
+  
+  #aside-title i {
+    cursor: pointer;
+  }
+
+  aside {
     width: 20%;
   }
+  
+  .friend {
+    font-size: 0.55em;
+  }
+  .friend img {
+    width: 10%;
+    height: 50%;
+    border-radius: 50%;
+  }
+  
+  .center {
+    width: 100%;
+  }
+  
+  .time {
+    width: 15%;
+  }
+  
   
   #library-icons i {
     cursor: pointer;
@@ -34,3 +61,9 @@ body {
     padding: 0.2em 0.7em;
     background-color: darkgray;
   }/*# sourceMappingURL=index.css.map */
+
+  @media screen and (max-width: 1199px) {
+    #center {
+      width: 80%;
+    }
+  }
