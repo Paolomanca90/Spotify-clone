@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="./assets/css/player.css" />
   </head>
 
-  <body class="d-flex flex-column h-100 flex-grow-1">
-    <div class="d-flex h-100">
+  <body class="d-flex flex-column">
+    <div id="container" class="d-flex">
       <nav
         class="navbar navbar-expand-lg d-flex justify-content-start flex-column"
       >
-        <div class="container-fluid h-100 align-items-start px-2">
+        <div class="container-fluid align-items-start px-2">
           <div
             class="collapse navbar-collapse flex-column"
             id="navbarSupportedContent"
@@ -100,29 +100,28 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        Recents
+                        Recenti
                       </a>
-                      <ul class="dropdown-menu dropdown-menu-end bg-secondary">
+                      <ul class="dropdown-menu bg-secondary">
                         <li>
                           <a class="dropdown-item text-light" href="#"
-                            >Action</a
+                            >Autore</a
                           >
                         </li>
                         <li>
                           <a class="dropdown-item text-light" href="#"
-                            >Another action</a
+                            >Ordine alfabetico</a
                           >
                         </li>
                         <li>
                           <a class="dropdown-item text-light" href="#"
-                            >Something else here</a
+                            >Aggiunti di recente</a
                           >
                         </li>
                       </ul>
                     </div>
                   </form>
                 </div>
-                <div></div>
               </li>
               <li class="nav-item d-lg-none">
                 <a class="nav-link text-light">Scarica l'app</a>
@@ -130,10 +129,13 @@
             </ul>
           </div>
         </div>
+        <div id="playlist-section" class="mt-3">
+          <ul id="lista-playlist" class="list-unstyled"></ul>
+        </div>
       </nav>
-      <div id="center" class="rounded bg-success mt-2">
+      <div id="center" class="rounded mt-2 text-light">
         <header
-          class="d-flex justify-content-between p-3 position-sticky z-1 top-0"
+          class="d-flex justify-content-between p-3 position-sticky z-1 rounded-top"
         >
           <div id="main-buttons">
             <button
@@ -168,7 +170,7 @@
             </ul>
           </div>
         </header>
-        <main class="p-3">
+        <main class="p-3 h-100">
           <h2 class="mt-4 fw-bold">Buon pomeriggio</h2>
           <div class="container-fluid p-0 mb-5">
             <div class="row g-3" id="first-row"></div>
@@ -176,6 +178,14 @@
           <h3 class="mt-4 fw-bold">Creato per te</h3>
           <div class="container-fluid p-0 mb-5">
             <div class="row g-3" id="second-row"></div>
+          </div>
+          <h3 class="mt-4 fw-bold">I tuoi mix preferiti</h3>
+          <div class="container-fluid p-0 mb-5">
+            <div class="row g-3" id="third-row"></div>
+          </div>
+          <h3 class="mt-4 fw-bold">Ascoltate di recente</h3>
+          <div class="container-fluid p-0 mb-5">
+            <div class="row g-3" id="fourth-row"></div>
           </div>
         </main>
       </div>
@@ -244,26 +254,15 @@
           <div class="col col-4 d-flex align-items-center">
             <div id="imageContainer" class="mx-2">IMG container</div>
             <div class="d-flex flex-column align-self-center pt-3">
-              <p class="mx-2 mb-0 fs-4" id="songName">Song Name</p>
-              <p class="mx-2 mt-0 fs-6 fw-lighter" id="artistName">
-                Artist Name
-              </p>
+              <p class="mx-2">Song Name</p>
+              <p class="mx-2">Artist Name</p>
             </div>
-            <div id="iconContainer">
-              <i class="bi bi-heart mx-2" id="heartIcon"></i>
-            </div>
+            <div><i class="bi bi-heart mx-2"></i></div>
           </div>
-          <div class="col col-4 d-flex flex-column align-self-center">
-            <div class="d-flex align-items-center justify-content-center pt-2">
-              <a
-                href="#"
-                class="text-decoration-none text-light"
-                id="colorToggleShuffle"
-                ><i class="bi bi-shuffle" id="shuffleIcon"></i
-              ></a>
-              <a href="#" class="text-decoration-none text-light"
-                ><i class="bi bi-skip-backward px-3"></i
-              ></a>
+          <div class="col-4 d-flex flex-column align-self-center">
+            <div class="d-flex justify-content-center">
+              <i class="bi bi-shuffle px-2"></i>
+              <i class="bi bi-skip-backward px-3"></i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -277,15 +276,8 @@
                   d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"
                 />
               </svg>
-              <a href="#" class="text-decoration-none text-light"
-                ><i class="bi bi-skip-forward px-3"></i
-              ></a>
-              <a
-                href="#"
-                class="text-decoration-none text-light"
-                id="colorToggleRepeat"
-                ><i class="bi bi-repeat" id="repeatIcon"></i
-              ></a>
+              <i class="bi bi-skip-forward px-3"></i>
+              <i class="bi bi-repeat px-2"></i>
             </div>
             <div class="d-flex align-items-center justify-content-between">
               <p class="m-0">0:05</p>
