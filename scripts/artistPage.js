@@ -1,5 +1,6 @@
 const UrlArtist =  "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 
+
 const coverImgRef = document.getElementById("coverImageArtist")
 const artistNameRef = document.getElementById("artistName")
 const monthlyListenersRef = document.getElementById("monthlyListeners")
@@ -29,8 +30,18 @@ const getArtist = function(artistId){
         monthlyListenersRef.innerHTML=`
         <h3>${artists.nb_fan} ascoltatori mensili</h3>
         `
-
     })
+    // .then((artists) => {
+    //     fetch(urlSearchParams + "/top?limit=50")
+    //     .then((artists) =>{
+    //         if(artists.ok){
+    //             console.log("Canzoni", artists)
+    //             return artists.json()
+    //         } else {
+    //             throw new Error ("Errore nella chiamata API")
+    //         }
+    //     })
+    // })
     .catch((err) => {
         console.log(err)
     })
