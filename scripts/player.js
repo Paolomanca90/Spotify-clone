@@ -52,3 +52,30 @@ colorToggleShuffle.addEventListener("click", function () {
     isWhiteShuffle = true;
   }
 });
+
+/* -----------------------THIS FUNCTION CHANGES THE SVG FROM "PLAY" to "PAUSE" ---------------------
+
+const playPause = document.getElementById("playPauseSvg");
+let isFilled = false;
+
+playPause.addEventListener("click", function () {
+  if (isFilled) {
+    playPause.classList.remove("bi bi-pause-circle-fill");
+
+    playPause.innerHTML = "";
+    playPause.className = "bi bi-play-circle-fill";
+
+    isFilled = false;
+  } else {
+    playPause.classList.add("bi bi-pause-circle-fill");
+
+    playPause.innerHTML = "";
+    playPause.className = "bi bi bi-pause-circle-fill mx-2";
+
+    isFilled = true;
+  }
+});
+
+*/
+
+/* ------------------------ LEFT SIDE TAKE IMAGE, SONG TITLE & ARTIST NAME -----------------*/
