@@ -21,9 +21,20 @@ const randomAlbums = function(){
             }
         })
         .then((data)=>{
-            for (let i=0; i<6; i++){
+            const randomNumber = function(){
                 let num = Math.floor(Math.random()*data.data.length)
-                choosenAlbums.push(data.data[num].album.id)
+                return num
+            }
+            for (let i=0; i<6; i++){
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(choosenAlbums.includes(random)){
+                        randomN()
+                    }else{
+                        choosenAlbums.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()
             }
             getAlbum()  
         })
@@ -43,9 +54,20 @@ const randomForYou = function(){
             }
         })
         .then((data)=>{
-            for (let i=0; i<4; i++){
+            const randomNumber = function(){
                 let num = Math.floor(Math.random()*data.data.length)
-                forYouAlbum.push(data.data[num].album.id)   
+                return num
+            }
+            for (let i=0; i<4; i++){
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(forYouAlbum.includes(random)){
+                        randomN()
+                    }else{
+                        forYouAlbum.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()  
             } 
             createForYou() 
         })
@@ -144,9 +166,20 @@ const mixAlbums = function(){
             }
         })
         .then((data)=>{
-            for (let i=0; i<4; i++){
+            const randomNumber = function(){
                 let num = Math.floor(Math.random()*data.data.length)
-                mixAlbum.push(data.data[num].album.id)   
+                return num
+            }
+            for (let i=0; i<4; i++){
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(mixAlbum.includes(random)){
+                        randomN()
+                    }else{
+                        mixAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()    
             } 
             mixForYou() 
         })
@@ -199,9 +232,20 @@ const recentAlbums = function(){
             }
         })
         .then((data)=>{
-            for (let i=0; i<4; i++){
+            const randomNumber = function(){
                 let num = Math.floor(Math.random()*data.data.length)
-                recentAlbum.push(data.data[num].album.id)   
+                return num
+            }
+            for (let i=0; i<4; i++){
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(recentAlbum.includes(random)){
+                        randomN()
+                    }else{
+                        recentAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()      
             } 
             recentForYou() 
         })
@@ -268,27 +312,58 @@ const searchResult = function(value){
             thirdRow.innerHTML = ''
             fourthRow.innerHTML = ''
             choosenAlbums = []
-            for (let i=0; i<6; i++){
+            const randomNumber = function(){
                 let num = Math.floor(Math.random()*data.data.length)
-                choosenAlbums.push(data.data[num].album.id)
+                return num
             }
-            getAlbum() 
+            for (let i=0; i<6; i++){
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(choosenAlbums.includes(random)){
+                        randomN()
+                    }else{
+                        choosenAlbums.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()
+            }
+            getAlbum()  
             forYouAlbum = []
             for (let i=0; i<4; i++){
-                let num = Math.floor(Math.random()*data.data.length)
-                forYouAlbum.push(data.data[num].album.id)   
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(forYouAlbum.includes(random)){
+                        randomN()
+                    }else{
+                        forYouAlbum.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()  
             } 
-            createForYou()
-            mixAlbum = []
+            createForYou() 
             for (let i=0; i<4; i++){
-                let num = Math.floor(Math.random()*data.data.length)
-                mixAlbum.push(data.data[num].album.id)   
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(mixAlbum.includes(random)){
+                        randomN()
+                    }else{
+                        mixAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()    
             } 
-            mixForYou()  
+            mixForYou() 
             recentAlbum = []
             for (let i=0; i<4; i++){
-                let num = Math.floor(Math.random()*data.data.length)
-                recentAlbum.push(data.data[num].album.id)   
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(recentAlbum.includes(random)){
+                        randomN()
+                    }else{
+                        recentAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()      
             } 
             recentForYou() 
         })
