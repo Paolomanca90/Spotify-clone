@@ -101,87 +101,160 @@
       </div>
     </nav>
     <div id="center">
-      <header class="d-flex justify-content-between p-3">
-        <div id="main-buttons">
-          <button
-            class="btn btn-outline-secondary rounded-circle m-0 left text-bg-dark"
-          >
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <button
-            class="btn btn-outline-secondary rounded-circle m-0 right text-bg-dark"
-          >
-            <i class="bi bi-chevron-right"></i>
-          </button>
-        </div>
-        <div class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i
-              id="user"
-              class="bi bi-person btn text-bg-dark rounded-circle"
-            ></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Log out</a></li>
-          </ul>
-        </div>
-      </header>
-      <main>
-        <div class="m-0 p-0" id="coverImageArtist">
-          <div id="verified">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-patch-check-fill text-primary"
-              viewBox="0 0 16 16"
+      <div class="m-0 p-0" id="coverImageArtist">
+        <header class="d-flex justify-content-between p-3">
+          <div id="main-buttons">
+            <button
+              class="btn btn-outline-secondary rounded-circle m-0 left text-bg-dark"
             >
-              <path
-                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
-              />
-            </svg>
-            Artista verificato
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button
+              class="btn btn-outline-secondary rounded-circle m-0 right text-bg-dark"
+            >
+              <i class="bi bi-chevron-right"></i>
+            </button>
           </div>
-          <div id="artistName"></div>
-          <div></div>
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i
+                id="user"
+                class="bi bi-person btn text-bg-dark rounded-circle"
+              ></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Log out</a></li>
+            </ul>
+          </div>
+        </header>
+        <div id="verified">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-patch-check-fill text-primary"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
+            />
+          </svg>
+          Artista verificato
         </div>
+        <div id="artistName"></div>
+        <div id="monthlyListeners"></div>
+      </div>
+      <main>
+        <div class="container">
+          <div class="play-follow d-flex align-items-center pt-4">
+            <div id="circle-play" class="me-4">
+              <i class="bi bi-play-fill"></i>
+            </div>
+            <div id="follow" class="me-4">
+              <button type="button" class="btn btn-outline-light fw-bold">
+                FOLLOW
+              </button>
+            </div>
+            <div class="dropdown me-4">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropstart
+              </button>
+              <ul class="dropdown-menu">
+                <li>Segui</li>
+                <li>Vai alla radio dell'artista</li>
+                <li>Segnala</li>
+                <li>Condividi</li>
+              </ul>
+            </div>
+          </div>
+          <div id="container-songs" class="p-3">
+            <div id="songs-row" class="row">
+              <div class="col col-12 col-lg-8">
+                <h5 class="fw-bold">Popolari</h5>
+              </div>
+              <div class="col col-12 col-lg-4">
+                <h5 class="fw-bold">Brani che ti piacciono</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fine container centrale -->
       </main>
     </div>
-    <aside id="right" class="p-3">
-      <div class="friend">
+    <aside
+      id="right"
+      class="p-3 d-flex flex-column rounded bg-dark m-2 d-none d-xl-block"
+    >
+      <div id="aside-title" class="d-flex justify-content-between mb-3">
         <h6>Friends activity</h6>
         <div>
-          <p><strong></strong></p>
-          <p></p>
-          <p><i></i></p>
+          <i class="bi bi-person-plus pe-1"></i>
+          <i class="bi bi-x-lg"></i>
         </div>
-        <div></div>
       </div>
-      <div class="friend">
-        <div>
-          <h4></h4>
-          <p></p>
-          <p><i></i></p>
+      <div class="friend mb-3 d-flex">
+        <img
+          src="assets/imgs/34340939_1722754957801585_815285007252717568_n (1).jpg"
+          alt="Simone"
+        />
+        <div class="d-flex flex-column ps-1 center">
+          <p class="m-0"><strong>Simone Potenza</strong></p>
+          <p class="m-0">Forte Forte Forte • Raffella Carrà</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> A far l'amore
+            comuncia tu
+          </p>
         </div>
-        <div></div>
+        <div class="time">4 days</div>
       </div>
-      <div class="friend">
-        <div>
-          <h4></h4>
-          <p></p>
-          <p><i></i></p>
+      <div class="friend mb-3 d-flex">
+        <img src="" alt="Antonio" />
+        <div class="d-flex flex-column ps-1 center">
+          <p class="m-0"><strong>Antonio Girardi</strong></p>
+          <p class="m-0">Forte Forte Forte • Raffella Carrà</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> A far l'amore
+            comuncia tu
+          </p>
         </div>
-        <div></div>
+        <div class="time">4 days</div>
+      </div>
+      <div class="friend mb-3 d-flex">
+        <img src="assets/imgs/VitasAlbum" alt="Nino" />
+        <div class="d-flex flex-column ps-1 center">
+          <p class="m-0"><strong>Nino Traverso</strong></p>
+          <p class="m-0">7th element • Vitas</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> 7th element
+          </p>
+        </div>
+        <div class="time">4 days</div>
+      </div>
+      <div class="friend d-flex">
+        <img src="assets/imgs/IMG-Claudio.jpg" alt="Claudio" />
+        <div class="d-flex flex-column ps-1 center">
+          <p class="m-0"><strong>Claudio Galano</strong></p>
+          <p class="m-0">Timidamente io • Ruggero dei Timidi</p>
+          <p class="m-0">
+            <i><i class="bi bi-music-note-beamed"></i></i> Timidamente io
+          </p>
+        </div>
+        <div class="time">4 days</div>
       </div>
     </aside>
     <script
