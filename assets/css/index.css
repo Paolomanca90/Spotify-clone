@@ -18,13 +18,13 @@ nav {
   background-color: black;
   width: 20%;
 }
-
-#center {
-  width: 60%;
+nav ul {
+  width: 100%;
 }
 
 aside {
-  width: 20%;
+  width: 15%;
+  background-color: black;
 }
 
 #library-icons i {
@@ -64,8 +64,6 @@ aside {
   width: 15%;
 }
 
-@media screen and (max-width: 1199px) {
-  #center {
-    width: 80%;
-  }
+#center .col .first-row div {
+  background-color: rgba(255, 255, 255, 0.162);
 }/*# sourceMappingURL=index.css.map */
