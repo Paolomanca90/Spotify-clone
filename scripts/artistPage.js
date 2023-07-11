@@ -5,11 +5,11 @@ const coverImgRef = document.getElementById("coverImageArtist")
 const artistNameRef = document.getElementById("artistName")
 const monthlyListenersRef = document.getElementById("monthlyListeners")
 
-const urlSearchParams = new URLSearchParams(window.location.search)
-const artistId = urlSearchParams.get("artistId")
+const addressBarContent = new URLSearchParams(location.search)
+const artistId = addressBarContent.get("id")
 
+// Fare un contenitore track e pushare dentro le api delle tracklist stringifizzate
 
-const getArtist = function(artistId){
     fetch(UrlArtist + artistId)
     .then((artist) => {
         if(artist.ok){
@@ -24,6 +24,7 @@ const getArtist = function(artistId){
         coverImgRef.style.backgroundSize = "cover"
         coverImgRef.style.height = "350px"
         coverImgRef.style.backgroundPositionY = "center"
+        coverImgRef.style.backgroundRepeat = "no-repeat"
         artistNameRef.innerHTML=`
         <h2>${artists.name}</h2>
         `
@@ -45,7 +46,7 @@ const getArtist = function(artistId){
     .catch((err) => {
         console.log(err)
     })
-}
+
 
 
 
