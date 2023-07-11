@@ -44,6 +44,9 @@ const getAlbum = function() {
 
 getAlbum()
 
+
+// ciclo da 1 a 4 con .then alla fine di ognuno
+// promiseAll
 const createForYou = function() {
     forYouAlbum.forEach((el,i) =>{
         fetch(albumUrl + el)
