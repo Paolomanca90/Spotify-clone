@@ -55,15 +55,10 @@ colorToggleShuffle.addEventListener("click", function () {
 
 /* -----------------------THIS FUNCTION CHANGES THE SVG FROM "PLAY" to "PAUSE" --------------------- */
 
-// Get the play/pause icon element
-const playPauseIcon = document.getElementById('playPause');
-
-// Add a click event listener to the icon
-playPauseIcon.addEventListener('click', function() {
-  // Toggle the "bi-play-circle-fill" and "bi-pause-circle-fill" classes
-  playPauseIcon.classList.toggle('bi-play-circle-fill');
-  playPauseIcon.classList.toggle('bi-pause-circle-fill');
+const playPauseIcon = document.getElementById("playPause");
+playPauseIcon.addEventListener("click", function () {
+  playPauseIcon.classList.toggle("bi-play-circle-fill");
+  playPauseIcon.classList.toggle("bi-pause-circle-fill");
 });
-
 
 /* ------------------------ LEFT SIDE TAKE IMAGE, SONG TITLE & ARTIST NAME -----------------*/
