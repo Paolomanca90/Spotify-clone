@@ -98,6 +98,14 @@ input[type="range"]:focus::-ms-fill-upper {
   max-height: 60px;
 }
 
+#shuffleIcon {
+  color: white;
+}
+
+#repeatIcon {
+  color: white;
+}
+
 @media (max-width: 576px) {
   #imageContainer img {
     border-radius: 50%;
