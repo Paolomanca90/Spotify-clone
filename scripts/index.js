@@ -63,7 +63,7 @@ const showPlaylist = function() {
         let newPlaylist = document.createElement("li")
         newPlaylist.classList.add("text-secondary")
         newPlaylist.innerHTML = `
-        <a href="#" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover ms-2">${playlist}</a>
+        <a href="#" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover mx-1">${playlist}</a>
         `
         ulPlaylist.appendChild(newPlaylist)
     })
@@ -85,7 +85,7 @@ const getAlbum = function() {
                 let newCol = document.createElement("div")
                 newCol.classList.add("col", "col-6", "col-lg-4")
                 newCol.innerHTML= `
-                <div class="d-flex align-items-center rounded shadow">
+                <div class="d-flex align-items-center rounded shadow prima-riga">
                 <img class="rounded-start" src="${data.cover_small}" alt="cover" />
                 <h6 class="m-0 ps-1"> ${data.title}</h6>
                 </div>
@@ -118,7 +118,8 @@ const createForYou = function() {
                     <img src="${data.cover_medium}" class="card-img rounded-2" alt="cover">
                     <div class="card-body p-0 mt-2">
                         <h5 class="card-title p-0">Daily Mix ${i+1}</h5>
-                        <p class="card-text p-0">${data.title}</p>
+                        <a href="artistPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
+                        <a href="artistPage.html?id=${data.artist.id}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-block">${data.artist.name}</a>
                     </div>
                 </div>
                 `
@@ -172,7 +173,8 @@ const mixForYou = function() {
                     <img src="${data.cover_medium}" class="card-img rounded-2" alt="cover">
                     <div class="card-body p-0 mt-2">
                         <h5 class="card-title p-0">Mix ${data.artist.name}</h5>
-                        <p class="card-text p-0">${data.title}</p>
+                        <a href="artistPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
+                        <a href="artistPage.html?id=${data.artist.id}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-block">${data.artist.name}</a>
                     </div>
                 </div>
                 `
@@ -226,7 +228,8 @@ const recentForYou = function() {
                     <img src="${data.cover_medium}" class="card-img rounded-2" alt="cover">
                     <div class="card-body p-0 mt-2">
                         <h5 class="card-title p-0">${data.artist.name}</h5>
-                        <p class="card-text p-0">${data.title}</p>
+                        <a href="artistPage.html?id=${data.id}" class="link-light fs-6 link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${data.title}</a>
+                        <a href="artistPage.html?id=${data.artist.id}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-block">${data.artist.name}</a>
                     </div>
                 </div>
                 `
