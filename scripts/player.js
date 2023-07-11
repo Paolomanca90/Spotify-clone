@@ -61,4 +61,14 @@ playPauseIcon.addEventListener("click", function () {
   playPauseIcon.classList.toggle("bi-pause-circle-fill");
 });
 
+
+/* JS TO MAKE THE MD AND SM PLAY/PAUSE BUTTON CHANGE AT CLICK*/
+
+const playPauseSmallIcon = document.getElementById("playPauseSmall");
+playPauseSmallIcon.addEventListener("click", function () {
+  playPauseSmallIcon.classList.toggle("bi-play-fill");
+  playPauseSmallIcon.classList.toggle("bi-pause-fill");
+});
+
+
 /* ------------------------ LEFT SIDE TAKE IMAGE, SONG TITLE & ARTIST NAME -----------------*/

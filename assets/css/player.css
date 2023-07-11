@@ -140,7 +140,11 @@ input[type="range"]:focus::-ms-fill-upper {
 
   /* UNABLE TO CHANGE THE ICON SIZE WITH BOOTSTRAP, CHANGED IT THROUGH CSS*/
 
-  #playPauseBigger {
+  #playPauseBigger, #playPauseSmall {
     font-size: 60px;
+  }
+
+  #playPauseSmall {
+    font-size: 24px;
   }
 }
