@@ -23,28 +23,30 @@
   <body class="d-flex flex-column h-100">
     <div id="container" class="d-flex">
       <nav
-        class="navbar navbar-expand-lg d-flex justify-content-start flex-column h-100"
+        class="navbar navbar-expand-lg d-flex justify-content-start flex-column h-100 p-0 mt-2"
       >
         <div class="container-fluid align-items-start p-0 ps-2 h-100">
           <div
-            class="collapse navbar-collapse flex-column"
+            class="collapse navbar-collapse flex-column h-100 flex-grow-1"
             id="navbarSupportedContent"
           >
             <ul
-              class="navbar-nav mb-2 mb-lg-0 d-flex flex-column text-light rounded bg-dark position-sticky"
+              class="navbar-nav mb-2 mb-lg-0 d-flex flex-column text-light rounded bg-dark position-sticky ps-2"
             >
               <li id="homeB" class="nav-item">
                 <a
                   class="nav-link active text-light"
                   aria-current="page"
                   href="#"
-                  ><i id="home-empty" class="bi bi-house-door"></i
-                  ><i class="bi bi-house-door-fill d-none"></i> Home</a
+                  ><i id="home-empty" class="bi bi-house-door fs-5"></i
+                  ><i class="bi bi-house-door-fill d-none fs-5"></i>
+                  <span>Home</span></a
                 >
               </li>
               <li id="searchB" class="nav-item">
                 <a class="nav-link text-light" href="#"
-                  ><i id="search-empty" class="bi bi-search"></i> Cerca</a
+                  ><i id="search-empty" class="bi bi-search fs-5"></i>
+                  <span>Cerca</span></a
                 >
                 <form class="d-flex d-none px-2 pb-2 pt-0" role="search">
                   <input
@@ -62,15 +64,18 @@
             </ul>
             <ul
               id="second-ul"
-              class="navbar-nav mt-2 mb-2 d-flex flex-column text-light rounded bg-dark"
+              class="navbar-nav mt-2 mb-2 d-flex flex-column text-light rounded bg-dark ps-2"
             >
-              <li class="nav-item d-flex flex-column">
+              <li
+                class="nav-item d-flex flex-column rounded-top bg-dark position-sticky top-0 shadow pb-1"
+              >
                 <div>
                   <div
                     class="d-flex align-items-center justify-content-between"
                   >
                     <button class="nav-link text-light">
-                      <i class="bi bi-collection-fill"></i> Libreria
+                      <i id="library" class="bi bi-collection-fill fs-5"></i>
+                      <span>Libreria</span>
                     </button>
                     <div
                       id="library-icons"
@@ -86,20 +91,25 @@
                         >
                           <i class="bi bi-plus mx-2 text-light"></i>
                         </a>
-                        <ul class="dropdown-menu bg-dark plus-menu">
+                        <ul
+                          class="dropdown-menu dropdown-menu-end bg-dark plus-menu shadow"
+                        >
                           <li>
                             <a class="dropdown-item text-light" href="#"
-                              >Crea una nuova playlist</a
+                              ><i class="bi bi-music-note-beamed"></i> Crea una
+                              nuova playlist</a
                             >
                           </li>
                           <li>
                             <a class="dropdown-item text-light" href="#"
-                              >Crea una cartella playlist</a
+                              ><i class="bi bi-folder2"></i> Crea una cartella
+                              playlist</a
                             >
                           </li>
                         </ul>
                       </div>
                       <i class="bi bi-arrow-right-short mx-2"></i>
+                      <i class="bi bi-arrow-left-short mx-2 d-none"></i>
                     </div>
                   </div>
                   <ul id="nav-links" class="d-flex p-2 mb-2">
@@ -112,7 +122,7 @@
                       <a
                         href="artistPage.html"
                         class="text-decoration-none text-light"
-                        >Artists</a
+                        >Artisti</a
                       >
                     </li>
                     <li class="list-group-item me-2 rounded-pill">
@@ -122,9 +132,7 @@
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li class="nav-item">
-                <div class="d-flex align-items-center">
+                <div id="my-search" class="d-flex align-items-center">
                   <div class="container p-0 ps-2">
                     <form>
                       <input type="checkbox" id="checkbox" />
@@ -146,7 +154,9 @@
                     >
                       Recenti
                     </a>
-                    <ul class="dropdown-menu bg-secondary">
+                    <ul
+                      class="dropdown-menu dropdown-menu-end bg-dark shadow me-2"
+                    >
                       <li>
                         <a class="dropdown-item text-light" href="#">Autore</a>
                       </li>
@@ -181,14 +191,10 @@
           class="d-flex justify-content-between p-3 position-sticky z-1 rounded-top mt-0"
         >
           <div id="main-buttons">
-            <button
-              class="btn btn-outline-secondary rounded-circle m-0 left text-bg-dark"
-            >
+            <button class="btn rounded-circle m-0 left text-light">
               <i class="bi bi-chevron-left"></i>
             </button>
-            <button
-              class="btn btn-outline-secondary rounded-circle m-0 right text-bg-dark"
-            >
+            <button class="btn rounded-circle m-0 right text-light">
               <i class="bi bi-chevron-right"></i>
             </button>
           </div>
@@ -232,9 +238,12 @@
           </div>
         </main>
       </div>
-      <aside id="right" class="d-flex flex-column m-2 ms-0 d-none d-xl-block">
+      <aside
+        id="right"
+        class="d-flex flex-column m-2 ms-0 d-none d-xl-block bg-dark p-2 rounded"
+      >
         <div id="aside-title" class="d-flex justify-content-between mb-3">
-          <h6>Friends activity</h6>
+          <h6>Attività degli amici</h6>
           <div>
             <i class="bi bi-person-plus pe-1"></i>
             <i class="bi bi-x-lg"></i>
@@ -256,13 +265,12 @@
           <div class="time">4 days</div>
         </div>
         <div class="friend mb-3 d-flex">
-          <img src="" alt="Antonio" />
+          <img class="antonio" src="assets/imgs/antonio.png" alt="Antonio" />
           <div class="d-flex flex-column ps-1 center">
             <p class="m-0"><strong>Antonio Girardi</strong></p>
-            <p class="m-0">Forte Forte Forte • Raffella Carrà</p>
+            <p class="m-0">Fast X • Theme song</p>
             <p class="m-0">
-              <i><i class="bi bi-music-note-beamed"></i></i> A far l'amore
-              comuncia tu
+              <i><i class="bi bi-music-note-beamed"></i></i> My City
             </p>
           </div>
           <div class="time">4 days</div>
@@ -301,7 +309,9 @@
               <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
                 <img src="./assets/imgs/IMG-Claudio.jpg" alt="image" />
               </div>
-              <p class="mx-2 fs-5 text mb-0">Song Name</p>
+              <p id="songNameForPlayer" class="mx-2 fs-5 text mb-0">
+                Song Name
+              </p>
             </div>
             <div class="d-flex align-items-center justify-content-center">
               <a href="#" class="text-decoration-none text-light"
@@ -319,8 +329,13 @@
             </div>
 
             <div class="d-flex flex-column align-self-center pt-3">
-              <p class="mx-2 fs-5 text mb-0">Song Name</p>
-              <p class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light">
+              <p id="songNameForPlayer" class="mx-2 fs-5 text mb-0">
+                Song Name
+              </p>
+              <p
+                id="artistNameForPlayer"
+                class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light"
+              >
                 Artist Name
               </p>
             </div>

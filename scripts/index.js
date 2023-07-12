@@ -140,8 +140,19 @@ const getAlbum = function () {
                     <img class="spotify-play d-none" src="assets/imgs/Spotify-Play-Button-removebg-preview.png" alt="spotify-play" />
                 </div>
                 `;
-
         firstRow.appendChild(newCol);
+        const firstRowDivs = document.querySelectorAll(".spotify-div");
+        console.log(firstRowDivs);
+        const firstRowDiv = firstRowDivs[firstRowDivs.length - 1];
+        console.log(firstRowDiv);
+        const spotyPlays = document.querySelectorAll(".spotify-play");
+        const spotyPlay = spotyPlays[spotyPlays.length - 1];
+        firstRowDiv.addEventListener("mouseover", function () {
+          spotyPlay.classList.remove("d-none");
+        });
+        firstRowDiv.addEventListener("mouseleave", function () {
+          spotyPlay.classList.add("d-none");
+        });
       })
       .catch((err) => {
         console.log("ERR", err);
@@ -207,7 +218,7 @@ const mixAlbums = function () {
           if (mixAlbum.includes(data.data[random].album.id)) {
             randomN();
           } else {
-            mixAlbum.push(data.data[0].album.id);
+            mixAlbum.push(data.data[random].album.id);
           }
         };
         randomN();
@@ -268,9 +279,10 @@ const recentAlbums = function () {
           if (recentAlbum.includes(data.data[random].album.id)) {
             randomN();
           } else {
-            recentAlbum.push(data.data[num].album.id);
+            recentAlbum.push(data.data[random].album.id);
           }
         };
+        randomN();
       }
       recentForYou();
     })
@@ -376,6 +388,7 @@ const searchResult = function (value) {
       mixForYou();
       recentAlbum = [];
       for (let i = 0; i < 4; i++) {
+        console.log("DATA", data.data.length);
         const randomN = function () {
           let random = randomNumber();
           if (recentAlbum.includes(data.data[random].album.id)) {
@@ -432,4 +445,44 @@ firstRowDiv.forEach((el) => {
   el.addEventListener("mouseover", function () {
     spotyPlay.classList.remove("d-none");
   });
+});
+
+const iconX = document.querySelector(".bi-x-lg");
+const aside = document.querySelector("aside");
+iconX.addEventListener("click", function () {
+  aside.classList.remove("d-xl-block");
+});
+
+const library = document.querySelector("#library");
+const spanH = document.querySelector("#homeB span");
+const spanS = document.querySelector("#searchB span");
+const ulSpan = document.querySelector("#second-ul span");
+const navLinks = document.querySelector("#nav-links");
+const playlistS = document.querySelector("#playlist-section");
+const mySearchBox = document.querySelector("#my-search");
+const libIcons = document.querySelector("#library-icons");
+const nav = document.querySelector("nav");
+library.addEventListener("click", function () {
+  spanH.classList.toggle("d-none");
+  spanS.classList.toggle("d-none");
+  ulSpan.classList.toggle("d-none");
+  navLinks.classList.toggle("d-none");
+  playlistS.classList.toggle("d-none");
+  mySearchBox.classList.toggle("d-none");
+  libIcons.classList.toggle("d-none");
+  nav.classList.toggle("nav-width");
+});
+
+const arrow = document.querySelector(".bi-arrow-right-short");
+const arrowLeft = document.querySelector(".bi-arrow-left-short");
+arrow.addEventListener("click", function () {
+  nav.classList.add("nav-expand");
+  arrow.classList.add("d-none");
+  arrowLeft.classList.remove("d-none");
+});
+
+arrowLeft.addEventListener("click", function () {
+  nav.classList.remove("nav-expand");
+  arrow.classList.remove("d-none");
+  arrowLeft.classList.add("d-none");
 });

@@ -94,6 +94,21 @@ playPauseSmallIcon.addEventListener("click", function () {
 
 /* ------------------------ LEFT SIDE TAKE IMAGE, SONG TITLE & ARTIST NAME -----------------*/
 
+const imageContainer = document.getElementById("imageContainer");
+const titleElement = document.getElementById("songNameForPlayer");
+const subtitleElement = document.getElementById("artistNameForPlayer");
+
+imageContainer.addEventListener("click", async () => {
+  const response = await fetch(
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+  );
+  const data = await response.json();
+
+  imageContainer.innerHTML = `<img src="${data.imageUrl}" alt="image" />`;
+  titleElement.textContent = data.songName;
+  subtitleElement.textContent = data.artistName;
+});
+
 // FUNZIONI PLAYER
 
 const btnPlay = document.getElementById("playPause");
