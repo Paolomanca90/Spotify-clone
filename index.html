@@ -23,11 +23,11 @@
   <body class="d-flex flex-column h-100">
     <div id="container" class="d-flex">
       <nav
-        class="navbar navbar-expand-lg d-flex justify-content-start flex-column h-100"
+        class="navbar navbar-expand-lg d-flex justify-content-start flex-column h-100 p-0 mt-2"
       >
         <div class="container-fluid align-items-start p-0 ps-2 h-100">
           <div
-            class="collapse navbar-collapse flex-column"
+            class="collapse navbar-collapse flex-column h-100 flex-grow-1"
             id="navbarSupportedContent"
           >
             <ul
@@ -64,7 +64,9 @@
               id="second-ul"
               class="navbar-nav mt-2 mb-2 d-flex flex-column text-light rounded bg-dark"
             >
-              <li class="nav-item d-flex flex-column">
+              <li
+                class="nav-item d-flex flex-column rounded-top bg-dark position-sticky top-0 shadow pb-1"
+              >
                 <div>
                   <div
                     class="d-flex align-items-center justify-content-between"
@@ -86,15 +88,19 @@
                         >
                           <i class="bi bi-plus mx-2 text-light"></i>
                         </a>
-                        <ul class="dropdown-menu bg-dark plus-menu">
+                        <ul
+                          class="dropdown-menu dropdown-menu-end bg-dark plus-menu shadow"
+                        >
                           <li>
                             <a class="dropdown-item text-light" href="#"
-                              >Crea una nuova playlist</a
+                              ><i class="bi bi-music-note-beamed"></i> Crea una
+                              nuova playlist</a
                             >
                           </li>
                           <li>
                             <a class="dropdown-item text-light" href="#"
-                              >Crea una cartella playlist</a
+                              ><i class="bi bi-folder2"></i> Crea una cartella
+                              playlist</a
                             >
                           </li>
                         </ul>
@@ -112,7 +118,7 @@
                       <a
                         href="artistPage.html"
                         class="text-decoration-none text-light"
-                        >Artists</a
+                        >Artisti</a
                       >
                     </li>
                     <li class="list-group-item me-2 rounded-pill">
@@ -122,8 +128,6 @@
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li class="nav-item">
                 <div class="d-flex align-items-center">
                   <div class="container p-0 ps-2">
                     <form>
@@ -146,7 +150,9 @@
                     >
                       Recenti
                     </a>
-                    <ul class="dropdown-menu bg-secondary">
+                    <ul
+                      class="dropdown-menu dropdown-menu-end bg-dark shadow me-2"
+                    >
                       <li>
                         <a class="dropdown-item text-light" href="#">Autore</a>
                       </li>
@@ -181,14 +187,10 @@
           class="d-flex justify-content-between p-3 position-sticky z-1 rounded-top mt-0"
         >
           <div id="main-buttons">
-            <button
-              class="btn btn-outline-secondary rounded-circle m-0 left text-bg-dark"
-            >
+            <button class="btn rounded-circle m-0 left text-light">
               <i class="bi bi-chevron-left"></i>
             </button>
-            <button
-              class="btn btn-outline-secondary rounded-circle m-0 right text-bg-dark"
-            >
+            <button class="btn rounded-circle m-0 right text-light">
               <i class="bi bi-chevron-right"></i>
             </button>
           </div>
@@ -234,7 +236,7 @@
       </div>
       <aside id="right" class="d-flex flex-column m-2 ms-0 d-none d-xl-block">
         <div id="aside-title" class="d-flex justify-content-between mb-3">
-          <h6>Friends activity</h6>
+          <h6>Attività degli amici</h6>
           <div>
             <i class="bi bi-person-plus pe-1"></i>
             <i class="bi bi-x-lg"></i>

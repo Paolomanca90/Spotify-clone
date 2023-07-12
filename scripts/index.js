@@ -92,7 +92,7 @@ const showPlaylist = function() {
 showPlaylist()
 
 const getAlbum = function() {
-    choosenAlbums.forEach((el) =>{
+    choosenAlbums.forEach((el,i) =>{
         fetch(albumUrl + el)
             .then((res) => {
                 if (res.ok) {
@@ -113,14 +113,24 @@ const getAlbum = function() {
                     <img class="spotify-play d-none" src="assets/imgs/Spotify-Play-Button-removebg-preview.png" alt="spotify-play" />
                 </div>
                 `
-
-                firstRow.appendChild(newCol)
-            }) 
+                firstRow.appendChild(newCol) 
+                const firstRowDivs = document.querySelectorAll('.spotify-div')
+                console.log(firstRowDivs)
+                const firstRowDiv = firstRowDivs[firstRowDivs.length-1]
+                console.log(firstRowDiv)
+                const spotyPlays = document.querySelectorAll('.spotify-play')
+                const spotyPlay = spotyPlays[firstRowDivs.length-1]
+                firstRowDiv.addEventListener('mouseover', function(){
+                    spotyPlay.classList.remove('d-none')
+                })
+                firstRowDiv.addEventListener('mouseleave', function(){
+                    spotyPlay.classList.add('d-none')
+                })
+            })
             .catch((err) => {
                 console.log("ERR", err)
             }) 
-        }
-    )
+        })
 }
 
 const createForYou = function() {
@@ -172,7 +182,7 @@ const mixAlbums = function(){
                     if(mixAlbum.includes(data.data[random].album.id)){
                         randomN()
                     }else{
-                        mixAlbum.push(data.data[num].album.id)  
+                        mixAlbum.push(data.data[random].album.id)  
                         }
                     }
                     randomN()
@@ -234,9 +244,11 @@ const recentAlbums = function(){
                     if(recentAlbum.includes(data.data[random].album.id)){
                         randomN()
                     }else{
-                        recentAlbum.push(data.data[num].album.id)    
+                        recentAlbum.push(data.data[random].album.id)  
+
                         }
-                    }    
+                    }
+                    randomN()      
             } 
             recentForYou() 
         })
@@ -394,12 +406,12 @@ center.addEventListener('scroll', function (e) {
     }
 })
 
-const firstRowDiv = document.querySelectorAll('.spotify-div')
-console.log(firstRowDiv)
-firstRowDiv.forEach((el)=>{
-    console.log(firstRowDiv)
-    const spotyPlay = document.querySelector('.spotify-play')
-    el.addEventListener('mouseover', function(){
-        spotyPlay.classList.remove('d-none')
-    })
-})
+// const firstRowDiv = document.querySelectorAll('.spotify-div')
+// console.log(firstRowDiv)
+// firstRowDiv.forEach((el)=>{
+//     console.log(firstRowDiv)
+//     const spotyPlay = document.querySelector('.spotify-play')
+//     el.addEventListener('mouseover', function(){
+//         spotyPlay.classList.remove('d-none')
+//     })
+// })

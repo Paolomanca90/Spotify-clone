@@ -6,9 +6,11 @@ body{
 #main-buttons{
     button.left{
          padding: 0.3em 0.5em 0.1em 0.4em;
+         background-color: rgba(1, 16, 2, 0.58);
     }
     button.right{
          padding: 0.3em 0.4em 0.1em 0.5em;
+         background-color: rgba(1, 16, 2, 0.58);
     }
 }
 
@@ -152,11 +154,13 @@ footer{
 }
 
 #second-ul{
-    height: calc(100% - 112px);
+    height: calc(100vh - 200px);
+    overflow: auto;
 }
 
 html::-webkit-scrollbar,
-#center::-webkit-scrollbar{
+#center::-webkit-scrollbar,
+#second-ul::-webkit-scrollbar{
     display: none;
 }
 
@@ -187,5 +191,11 @@ html::-webkit-scrollbar,
 }
 
 .plus-menu{
-    width: 220px;
+    width: 200px;
+    font-size: 0.8em;
+}
+
+#li-search{
+    top: 105px;
+    z-index: 1;
 }
