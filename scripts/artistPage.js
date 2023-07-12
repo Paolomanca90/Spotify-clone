@@ -1,6 +1,8 @@
 const UrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const topSongs = "/top?limit=50"
 
+let myUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+
 const coverImgRef = document.getElementById("coverImageArtist");
 const artistNameRef = document.getElementById("artistName");
 const monthlyListenersRef = document.getElementById("monthlyListeners");
@@ -79,6 +81,22 @@ fetch(UrlArtist + artistId + topSongs)
   .catch((err) => {
     console.log(err);
 })
+
+fetch(UrlArtist+artistId)
+.then((data) =>{
+  if (data.ok) {
+      return data.json();
+  } else {
+      throw new Error ("Errore nel caricamento delle canzoni")
+  }
+})
+.then((albums)=> {
+  console.log("ALBUMS", albums)
+})
+.catch((err) => {
+  console.log(err);
+})
+
 
 const playlist = [
   "culetto 2021",
