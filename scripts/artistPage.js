@@ -4,46 +4,51 @@ const coverImgRef = document.getElementById("coverImageArtist");
 const artistNameRef = document.getElementById("artistName");
 const monthlyListenersRef = document.getElementById("monthlyListeners");
 
-const urlSearchParams = new URLSearchParams(window.location.search);
-const artistId = urlSearchParams.get("artistId");
+const coverImgRef = document.getElementById("coverImageArtist");
+const artistNameRef = document.getElementById("artistName");
+const monthlyListenersRef = document.getElementById("monthlyListeners");
+const centerDiv = document.getElementById("center");
 
-const getArtist = function (artistId) {
-  fetch(UrlArtist + artistId)
-    .then((artist) => {
-      if (artist.ok) {
-        return artist.json();
-      } else {
-        throw new Error("Errore nella chiamata API");
-      }
-    })
-    .then((artists) => {
-      console.log("artists", artists);
-      coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
-      coverImgRef.style.backgroundSize = "cover";
-      coverImgRef.style.height = "350px";
-      coverImgRef.style.backgroundPositionY = "center";
-      artistNameRef.innerHTML = `
+const addressBarContent = new URLSearchParams(location.search);
+const artistId = addressBarContent.get("id");
+
+// Fare un contenitore track e pushare dentro le api delle tracklist stringifizzate
+
+fetch(UrlArtist + artistId)
+  .then((artist) => {
+    if (artist.ok) {
+      return artist.json();
+    } else {
+      throw new Error("Errore nella chiamata API");
+    }
+  })
+  .then((artists) => {
+    console.log("artists", artists);
+    coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
+    coverImgRef.style.backgroundSize = "cover";
+    coverImgRef.style.height = "350px";
+    coverImgRef.style.backgroundPositionY = "center";
+    artistNameRef.innerHTML = `
         <h2 class="artistTitle text-light">${artists.name}</h2>
         `;
-      monthlyListenersRef.innerHTML = `
+    monthlyListenersRef.innerHTML = `
         <p class="fs-6 text-light">${artists.nb_fan} ascoltatori mensili</p>
         `;
-    })
-    // .then((artists) => {
-    //     fetch(urlSearchParams + "/top?limit=50")
-    //     .then((artists) =>{
-    //         if(artists.ok){
-    //             console.log("Canzoni", artists)
-    //             return artists.json()
-    //         } else {
-    //             throw new Error ("Errore nella chiamata API")
-    //         }
-    //     })
-    // })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+  })
+  // .then((artists) => {
+  //     fetch(urlSearchParams + "/top?limit=50")
+  //     .then((artists) =>{
+  //         if(artists.ok){
+  //             console.log("Canzoni", artists)
+  //             return artists.json()
+  //         } else {
+  //             throw new Error ("Errore nella chiamata API")
+  //         }
+  //     })
+  // })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const playlist = [
   "culetto 2021",
