@@ -11,6 +11,11 @@ let forYouAlbum = []
 let mixAlbum = []
 let recentAlbum = []
 
+const randomNumber = function(){
+    let num = Math.floor(Math.random()*26)
+    return num
+}
+
 const randomAlbums = function(){
     fetch(searchUrl)
         .then((res)=>{
@@ -22,8 +27,20 @@ const randomAlbums = function(){
         })
         .then((data)=>{
             for (let i=0; i<6; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 choosenAlbums.push(data.data[num].album.id)
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(choosenAlbums.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        choosenAlbums.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()
+>>>>>>> Stashed changes
             }
             getAlbum()  
         })
@@ -44,8 +61,20 @@ const randomForYou = function(){
         })
         .then((data)=>{
             for (let i=0; i<4; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 forYouAlbum.push(data.data[num].album.id)   
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(forYouAlbum.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        forYouAlbum.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()  
+>>>>>>> Stashed changes
             } 
             createForYou() 
         })
@@ -86,9 +115,12 @@ const getAlbum = function() {
                 let newCol = document.createElement("div")
                 newCol.classList.add("col", "col-6", "col-lg-4")
                 newCol.innerHTML= `
-                <div class="d-flex align-items-center rounded shadow prima-riga">
-                <img class="rounded-start" src="${data.cover_small}" alt="cover" />
-                <h6 class="m-0 ps-1"> ${data.title}</h6>
+                <div class="d-flex align-items-center justify-content-between rounded shadow prima-riga spotify-div">
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-start" src="${data.cover_small}" alt="cover" />
+                        <h6 class="m-0 ps-1"> ${data.title}</h6>
+                    </div>
+                    <img class="spotify-play d-none" src="assets/imgs/Spotify-Play-Button-removebg-preview.png" alt="spotify-play" />
                 </div>
                 `
 
@@ -145,8 +177,20 @@ const mixAlbums = function(){
         })
         .then((data)=>{
             for (let i=0; i<4; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 mixAlbum.push(data.data[num].album.id)   
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(mixAlbum.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        mixAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()    
+>>>>>>> Stashed changes
             } 
             mixForYou() 
         })
@@ -200,8 +244,20 @@ const recentAlbums = function(){
         })
         .then((data)=>{
             for (let i=0; i<4; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 recentAlbum.push(data.data[num].album.id)   
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(recentAlbum.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        recentAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()      
+>>>>>>> Stashed changes
             } 
             recentForYou() 
         })
@@ -269,12 +325,25 @@ const searchResult = function(value){
             fourthRow.innerHTML = ''
             choosenAlbums = []
             for (let i=0; i<6; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 choosenAlbums.push(data.data[num].album.id)
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(choosenAlbums.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        choosenAlbums.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()
+>>>>>>> Stashed changes
             }
             getAlbum() 
             forYouAlbum = []
             for (let i=0; i<4; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 forYouAlbum.push(data.data[num].album.id)   
             } 
@@ -283,12 +352,48 @@ const searchResult = function(value){
             for (let i=0; i<4; i++){
                 let num = Math.floor(Math.random()*data.data.length)
                 mixAlbum.push(data.data[num].album.id)   
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(forYouAlbum.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        forYouAlbum.push(data.data[random].album.id)
+                        }
+                    }
+                    randomN()  
+            } 
+            createForYou()
+            mixAlbum = [] 
+            for (let i=0; i<4; i++){
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(mixAlbum.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        mixAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()    
+>>>>>>> Stashed changes
             } 
             mixForYou()  
             recentAlbum = []
             for (let i=0; i<4; i++){
+<<<<<<< Updated upstream
                 let num = Math.floor(Math.random()*data.data.length)
                 recentAlbum.push(data.data[num].album.id)   
+=======
+                const randomN = function(){
+                    let random = randomNumber()
+                    if(recentAlbum.includes(data.data[random].album.id)){
+                        randomN()
+                    }else{
+                        recentAlbum.push(data.data[random].album.id)   
+                        }
+                    }
+                    randomN()      
+>>>>>>> Stashed changes
             } 
             recentForYou() 
         })
@@ -317,3 +422,24 @@ const searchB = function(){
 const searchButton = document.querySelector('#searchB a')
 searchButton.addEventListener('click', searchB)
 
+
+const center = document.getElementById('center')
+const header = document.querySelector('header')
+center.addEventListener('scroll', function (e) {
+    console.log(center.scrollTop)
+    if (center.scrollTop > 80) {
+      header.classList.add('header-color')
+    }else{
+        header.classList.remove('header-color')
+    }
+})
+
+const firstRowDiv = document.querySelectorAll('.spotify-div')
+console.log(firstRowDiv)
+firstRowDiv.forEach((el)=>{
+    console.log(firstRowDiv)
+    const spotyPlay = document.querySelector('.spotify-play')
+    el.addEventListener('mouseover', function(){
+        spotyPlay.classList.remove('d-none')
+    })
+})
