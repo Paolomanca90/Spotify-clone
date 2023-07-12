@@ -149,3 +149,26 @@ input[type="range"]:focus::-ms-fill-upper {
     font-size: 24px;
   }
 }
+
+
+/* PROGRESS BAR */
+.player-progress {
+  display: flex;
+  position: relative;
+  height: 6px;
+  background: #a3a3a3;
+  border-radius: 25px;
+  margin: 0 5px;
+  flex: 10;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+
+.player-progress-filled {
+  height: 6px;
+  background: red;
+  flex: 0;
+  flex-basis: 10%;
+  border-radius: 25px;
+}
+

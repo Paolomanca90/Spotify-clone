@@ -44,7 +44,6 @@ heartIcon.addEventListener("click", function () {
   }
 });
 
-
 /* -----------------------THIS FUNCTION CHANGES THE SHUFFLE ICON COLOR FROM WHITE TO GREEN (AND VICE VERSA) ---------------------*/
 
 const repeatIcon = document.getElementById("repeatIcon");
@@ -94,3 +93,31 @@ playPauseSmallIcon.addEventListener("click", function () {
 });
 
 /* ------------------------ LEFT SIDE TAKE IMAGE, SONG TITLE & ARTIST NAME -----------------*/
+
+// FUNZIONI PLAYER
+
+const audioElement = document.querySelector("audio");
+console.log(audioElement);
+const audioCtx = new AudioContext();
+const track = audioCtx.createMediaElementSource(audioElement);
+console.log(track);
+const btnPlay = document.getElementById("playPause");
+btnPlay.addEventListener("click", () => {
+  console.log("ciao");
+  audioElement.play();
+  // if (audioCtx.state === "suspended") {
+  //   audioCtx.resume();
+  // }
+  // // Play or pause track depending on state
+  // if (btnPlay.dataset.playing === "false") {
+  //   audioElement.play();
+  //   btnPlay.dataset.playing = "true";
+  //   // playIcon.classList.add("hidden");
+  //   // pauseIcon.classList.remove("hidden");
+  // } else if (btnPlay.dataset.playing === "true") {
+  //   audioElement.pause();
+  //   btnPlay.dataset.playing = "false";
+  //   // pauseIcon.classList.add("hidden");
+  //   // playIcon.classList.remove("hidden");
+  // }
+});

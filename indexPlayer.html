@@ -291,6 +291,7 @@
         </div>
       </aside>
     </div>
+    <!-- FOOTER -->
     <footer class="text-light position-fixed bottom-0 w-100">
       <div class="container-fluid">
         <div class="row d-md-flex justify-content-between">
@@ -334,24 +335,28 @@
                 <i class="bi bi-shuffle px-2" id="shuffleIcon"></i>
               </a>
               <i class="bi bi-skip-backward px-3"></i>
-              <i class="bi bi-play-circle-fill mx-2 fs-2" id="playPause"></i>
+              <!-- TASTO PLAY -->
+              <!-- <i class="bi bi-play-circle-fill mx-2 fs-2" id="playPause"></i> -->
+              <button
+                class="player-play-btn"
+                role="button"
+                aria-label="Play"
+                data-playing="false"
+                id="playPause"
+              >
+                PLAY
+              </button>
               <i class="bi bi-skip-forward px-3"></i>
               <a href="#" id="colorToggleRepeat">
                 <i class="bi bi-repeat px-2" id="repeatIcon"></i>
               </a>
             </div>
-
+            <!-- PROGRESS BAR -->
             <div class="d-flex align-items-center justify-content-between">
               <p class="m-0" id="songStartPoint">0:00</p>
-              <input
-                type="range"
-                name="bi-volume-down"
-                id="volumeScrollBar"
-                min="0"
-                max="100"
-                value="30"
-                class="px-2"
-              />
+              <div class="player-progress d-flex">
+                <div class="player-progress-filled"></div>
+              </div>
               <p class="m-0" id="songEndPoint">4:26</p>
             </div>
           </div>
@@ -384,6 +389,13 @@
           </div>
         </div>
       </div>
+      <audio crossorigin="anonymous">
+        <source
+          src="https://cdns-preview-5.dzcdn.net/stream/c-5a9b2da5acb610170196eb5872c7d2ab-17.mp3"
+          type="audio/mpeg"
+        />
+        >
+      </audio>
     </footer>
 
     <script
@@ -391,7 +403,7 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script src="./scripts/index.js"></script>
+    <script src="scripts/index.js"></script>
     <script src="./scripts/player.js"></script>
   </body>
 </html>
