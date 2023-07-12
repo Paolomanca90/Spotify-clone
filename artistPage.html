@@ -141,8 +141,8 @@
         </div>
       </header>
       <div class="m-0 p-0 d-flex" id="coverImageArtist">
-        <div class="align-self-end">
-          <div id="verified">
+        <div class="align-self-end mb-4 ms-4">
+          <div id="verified" class="d-flex align-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -155,9 +155,9 @@
                 d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
               />
             </svg>
-            Artista verificato
+            <p class="fs-6 text-light m-0 ps-2">Artista verificato</p>
           </div>
-          <div id="artistName"></div>
+          <div id="artistName" class="my-4"></div>
           <div id="monthlyListeners"></div>
         </div>
       </div>
@@ -165,7 +165,11 @@
         <div class="container">
           <div class="play-follow d-flex align-items-center pt-4">
             <div id="circle-play" class="me-4">
-              <i class="bi bi-play-fill"></i>
+              <img
+                src="./assets/imgs/Spotify-Play-Button-Black.png"
+                alt="play"
+                style="height: 75px"
+              />
             </div>
             <div id="follow" class="me-4">
               <button type="button" class="btn btn-outline-light fw-bold">
@@ -192,9 +196,9 @@
           <div id="container-songs" class="p-3">
             <div id="songs-row" class="row">
               <div class="col col-12 col-lg-8">
-                <h5 class="fw-bold">Popolari</h5>
+                <h5 class="fw-bold text-light">Popolari</h5>
               </div>
-              <div class="col col-12 col-lg-4">
+              <div class="col col-12 col-lg-4 text-light">
                 <h5 class="fw-bold">Brani che ti piacciono</h5>
               </div>
             </div>
@@ -205,7 +209,7 @@
     </div>
     <aside
       id="right"
-      class="p-3 d-flex flex-column rounded bg-dark m-2 d-none d-xl-block"
+      class="p-3 d-flex flex-column rounded bg-dark d-none d-xl-block"
     >
       <div id="aside-title" class="d-flex justify-content-between mb-3">
         <h6>Friends activity</h6>
