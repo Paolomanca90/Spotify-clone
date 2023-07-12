@@ -410,7 +410,6 @@ const iconX = document.querySelector('.bi-x-lg')
 const aside = document.querySelector('aside')
 iconX.addEventListener('click', function(){
     aside.classList.remove('d-xl-block')
-    center.style.width = '80%'
 })
 
 const library = document.querySelector('#library')
@@ -431,4 +430,18 @@ library.addEventListener('click', function(){
     mySearchBox.classList.toggle('d-none')
     libIcons.classList.toggle('d-none')
     nav.classList.toggle('nav-width')
+})
+
+const arrow = document.querySelector('.bi-arrow-right-short')
+const arrowLeft = document.querySelector('.bi-arrow-left-short')
+arrow.addEventListener('click', function(){
+    nav.classList.add('nav-expand')
+    arrow.classList.add('d-none')
+    arrowLeft.classList.remove('d-none')
+})
+
+arrowLeft.addEventListener('click', function(){
+    nav.classList.remove('nav-expand')
+    arrow.classList.remove('d-none')
+    arrowLeft.classList.add('d-none')
 })
