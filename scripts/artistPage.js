@@ -1,9 +1,11 @@
 const UrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const topSongs = "/top?limit=50"
 
 const coverImgRef = document.getElementById("coverImageArtist");
 const artistNameRef = document.getElementById("artistName");
 const monthlyListenersRef = document.getElementById("monthlyListeners");
 const centerDiv = document.getElementById("center");
+
 
 const addressBarContent = new URLSearchParams(location.search);
 const artistId = addressBarContent.get("id");
@@ -23,28 +25,46 @@ fetch(UrlArtist + artistId)
     coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
     coverImgRef.style.backgroundSize = "cover";
     coverImgRef.style.height = "350px";
-    coverImgRef.style.backgroundPositionY = "center";
+    coverImgRef.style.backgroundPositionY = "25%";
     artistNameRef.innerHTML = `
         <h2 class="artistTitle text-light">${artists.name}</h2>
         `;
     monthlyListenersRef.innerHTML = `
         <p class="fs-6 text-light">${artists.nb_fan} ascoltatori mensili</p>
         `;
-  })
-  // .then((artists) => {
-  //     fetch(urlSearchParams + "/top?limit=50")
-  //     .then((artists) =>{
-  //         if(artists.ok){
-  //             console.log("Canzoni", artists)
-  //             return artists.json()
-  //         } else {
-  //             throw new Error ("Errore nella chiamata API")
-  //         }
-  //     })
-  // })
+    })
   .catch((err) => {
     console.log(err);
   });
+
+fetch(UrlArtist + artistId + topSongs)
+.then((songs) =>{
+    if (songs.ok) {
+        return songs.json();
+    } else {
+        throw new Error ("Errore nel caricamento delle canzoni")
+    }
+})
+.then((songs) => {
+    console.log(songs)
+    songs.data.forEach((song) =>{
+        console.log("song", song)
+        let singleSong = document.createElement("div")
+        singleSong.classList.add("d-flex", "align-items-center")
+        singleSong.innerHTML = `
+        <div style="width:56px; height:56px; background-image:url('${song.album.cover_small}')"></div>
+        <p class="text-light mb-0">${song.title}</p>
+        `
+        
+        // albumCover.style.height = "56px"
+        // albumCover.style.width = "56px"
+        // albumCover.style.backgroundImage = `url(${album.album.cover_small})`
+        songColumn = document.getElementById("songs-column")
+        songColumn.appendChild(singleSong)
+    })
+}) .catch((err) => {
+    console.log(err);
+})
 
 const playlist = [
   "culetto 2021",
