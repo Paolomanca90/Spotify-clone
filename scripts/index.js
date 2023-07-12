@@ -27,10 +27,6 @@ const randomAlbums = function(){
         })
         .then((data)=>{
             for (let i=0; i<6; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                choosenAlbums.push(data.data[num].album.id)
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(choosenAlbums.includes(data.data[random].album.id)){
@@ -40,7 +36,6 @@ const randomAlbums = function(){
                         }
                     }
                     randomN()
->>>>>>> Stashed changes
             }
             getAlbum()  
         })
@@ -61,10 +56,6 @@ const randomForYou = function(){
         })
         .then((data)=>{
             for (let i=0; i<4; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                forYouAlbum.push(data.data[num].album.id)   
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(forYouAlbum.includes(data.data[random].album.id)){
@@ -74,7 +65,6 @@ const randomForYou = function(){
                         }
                     }
                     randomN()  
->>>>>>> Stashed changes
             } 
             createForYou() 
         })
@@ -177,20 +167,15 @@ const mixAlbums = function(){
         })
         .then((data)=>{
             for (let i=0; i<4; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                mixAlbum.push(data.data[num].album.id)   
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(mixAlbum.includes(data.data[random].album.id)){
                         randomN()
                     }else{
-                        mixAlbum.push(data.data[random].album.id)   
+                        mixAlbum.push(data.data[num].album.id)  
                         }
                     }
-                    randomN()    
->>>>>>> Stashed changes
+                    randomN()
             } 
             mixForYou() 
         })
@@ -244,20 +229,14 @@ const recentAlbums = function(){
         })
         .then((data)=>{
             for (let i=0; i<4; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                recentAlbum.push(data.data[num].album.id)   
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(recentAlbum.includes(data.data[random].album.id)){
                         randomN()
                     }else{
-                        recentAlbum.push(data.data[random].album.id)   
+                        recentAlbum.push(data.data[num].album.id)    
                         }
-                    }
-                    randomN()      
->>>>>>> Stashed changes
+                    }    
             } 
             recentForYou() 
         })
@@ -325,10 +304,6 @@ const searchResult = function(value){
             fourthRow.innerHTML = ''
             choosenAlbums = []
             for (let i=0; i<6; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                choosenAlbums.push(data.data[num].album.id)
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(choosenAlbums.includes(data.data[random].album.id)){
@@ -338,21 +313,10 @@ const searchResult = function(value){
                         }
                     }
                     randomN()
->>>>>>> Stashed changes
             }
             getAlbum() 
             forYouAlbum = []
             for (let i=0; i<4; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                forYouAlbum.push(data.data[num].album.id)   
-            } 
-            createForYou()
-            mixAlbum = []
-            for (let i=0; i<4; i++){
-                let num = Math.floor(Math.random()*data.data.length)
-                mixAlbum.push(data.data[num].album.id)   
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(forYouAlbum.includes(data.data[random].album.id)){
@@ -375,15 +339,10 @@ const searchResult = function(value){
                         }
                     }
                     randomN()    
->>>>>>> Stashed changes
             } 
             mixForYou()  
             recentAlbum = []
             for (let i=0; i<4; i++){
-<<<<<<< Updated upstream
-                let num = Math.floor(Math.random()*data.data.length)
-                recentAlbum.push(data.data[num].album.id)   
-=======
                 const randomN = function(){
                     let random = randomNumber()
                     if(recentAlbum.includes(data.data[random].album.id)){
@@ -393,7 +352,6 @@ const searchResult = function(value){
                         }
                     }
                     randomN()      
->>>>>>> Stashed changes
             } 
             recentForYou() 
         })
