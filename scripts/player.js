@@ -96,28 +96,57 @@ playPauseSmallIcon.addEventListener("click", function () {
 
 // FUNZIONI PLAYER
 
-const audioElement = document.querySelector("audio");
-console.log(audioElement);
-const audioCtx = new AudioContext();
-const track = audioCtx.createMediaElementSource(audioElement);
-console.log(track);
 const btnPlay = document.getElementById("playPause");
+const audioElement = document.querySelector("audio");
+let playing = false;
 btnPlay.addEventListener("click", () => {
-  console.log("ciao");
-  audioElement.play();
-  // if (audioCtx.state === "suspended") {
-  //   audioCtx.resume();
-  // }
-  // // Play or pause track depending on state
-  // if (btnPlay.dataset.playing === "false") {
-  //   audioElement.play();
-  //   btnPlay.dataset.playing = "true";
-  //   // playIcon.classList.add("hidden");
-  //   // pauseIcon.classList.remove("hidden");
-  // } else if (btnPlay.dataset.playing === "true") {
-  //   audioElement.pause();
-  //   btnPlay.dataset.playing = "false";
-  //   // pauseIcon.classList.add("hidden");
-  //   // playIcon.classList.remove("hidden");
-  // }
+  if (playing) {
+    playing = !playing;
+    audioElement.pause();
+  } else {
+    playing = !playing;
+    audioElement.play();
+  }
 });
+
+// VOLUME
+const input = document.querySelector("#volume");
+console.log(audioElement.volume);
+input.addEventListener("change", (event) => {
+  console.log(audioElement.volume);
+  audioElement.volume = event.target.value;
+});
+
+// TIME SONG
+const playerCurrentTime = document.querySelector("#songStartPoint");
+const playerSongDuration = document.querySelector("#songEndPoint");
+
+audioElement.addEventListener("timeupdate", () => {
+  /////Song duration////
+  var minutes = parseInt(audioElement.duration / 60, 10);
+  var seconds = parseInt(audioElement.duration % 60);
+  if (minutes < 10) {
+    minutes = minutes;
+  }
+  playerSongDuration.textContent = minutes + ":" + seconds;
+
+  /////Passed time////
+  var mins = Math.floor(audioElement.currentTime / 60);
+  if (mins < 10) {
+    mins = String(mins);
+  }
+  var secs = Math.floor(audioElement.currentTime % 60);
+  if (secs < 10) {
+    secs = "0" + String(secs);
+  }
+  playerCurrentTime.textContent = mins + ":" + secs;
+  /////Progress////
+  progressUpdate();
+});
+
+// PLAYER PROGRESS
+const progressFilled = document.querySelector(".player-progress-filled");
+function progressUpdate() {
+  const percent = (audioElement.currentTime / audioElement.duration) * 100;
+  progressFilled.style.flexBasis = `${percent}%`;
+}

@@ -1,8 +1,6 @@
 /* THIS IS THE CSS FOR THE MUSIC TRACKER AND VOLUME*/
 
 input[type="range"] {
-  height: 25px;
-  -webkit-appearance: none;
   appearance: none;
   margin: 10px 0;
   width: 100%;
@@ -168,7 +166,6 @@ input[type="range"]:focus::-ms-fill-upper {
   height: 6px;
   background: red;
   flex: 0;
-  flex-basis: 10%;
   border-radius: 25px;
 }
 
