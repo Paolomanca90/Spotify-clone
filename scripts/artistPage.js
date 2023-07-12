@@ -10,7 +10,10 @@ const centerDiv = document.getElementById("center");
 const addressBarContent = new URLSearchParams(location.search);
 const artistId = addressBarContent.get("id");
 
-// Fare un contenitore track e pushare dentro le api delle tracklist stringifizzate
+const randomNumber = function(){
+  let num = Math.floor(Math.random()*5)
+  return num
+}
 
 fetch(UrlArtist + artistId)
   .then((artist) => {
@@ -25,7 +28,7 @@ fetch(UrlArtist + artistId)
     coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
     coverImgRef.style.backgroundSize = "cover";
     coverImgRef.style.height = "350px";
-    coverImgRef.style.backgroundPositionY = "25%";
+    coverImgRef.style.backgroundPositionY = "35%";
     artistNameRef.innerHTML = `
         <h2 class="artistTitle text-light">${artists.name}</h2>
         `;
@@ -50,19 +53,31 @@ fetch(UrlArtist + artistId + topSongs)
     songs.data.forEach((song) =>{
         console.log("song", song)
         let singleSong = document.createElement("div")
-        singleSong.classList.add("d-flex", "align-items-center")
+        singleSong.classList.add("d-flex", "align-items-center", "mt-4")
         singleSong.innerHTML = `
         <div style="width:56px; height:56px; background-image:url('${song.album.cover_small}')"></div>
-        <p class="text-light mb-0">${song.title}</p>
+        <p class="text-light mb-0 ps-3">${song.title}</p>
+        <p class="text-secondary ms-auto">${(song.duration / 60).toFixed(2)}</p>
         `
-        
-        // albumCover.style.height = "56px"
-        // albumCover.style.width = "56px"
-        // albumCover.style.backgroundImage = `url(${album.album.cover_small})`
         songColumn = document.getElementById("songs-column")
         songColumn.appendChild(singleSong)
-    })
-}) .catch((err) => {
+      })
+      console.log("Array", songs)
+      const randNumber = randomNumber()
+      let createLiked = function(){
+
+      }
+        songs.data[randNumber]
+        let likedSong = document.createElement("div")
+        likedSong.classList.add("d-flex", "align-items-center", "mt-4")
+        likedSong.innerHTML = `
+        <div style="width:56px; height:56px; background-image:url('${songs.album.cover}')"></div>
+        <p class="text-light mb-0 ps-3">${songs.title}</p>
+        `
+        likedColumn = document.getElementById("liked-songs")
+        likedColumn.appendChild(likedSong)
+      })
+  .catch((err) => {
     console.log(err);
 })
 
