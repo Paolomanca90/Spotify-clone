@@ -4,6 +4,7 @@ const UrlArtist =  "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 const coverImgRef = document.getElementById("coverImageArtist")
 const artistNameRef = document.getElementById("artistName")
 const monthlyListenersRef = document.getElementById("monthlyListeners")
+const centerDiv = document.getElementById("center")
 
 const addressBarContent = new URLSearchParams(location.search)
 const artistId = addressBarContent.get("id")
@@ -26,7 +27,7 @@ const artistId = addressBarContent.get("id")
         coverImgRef.style.backgroundPositionY = "center"
         coverImgRef.style.backgroundRepeat = "no-repeat"
         artistNameRef.innerHTML=`
-        <h2>${artists.name}</h2>
+        <h2 class="text-light">${artists.name}</h2>
         `
         monthlyListenersRef.innerHTML=`
         <h3>${artists.nb_fan} ascoltatori mensili</h3>
