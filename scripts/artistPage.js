@@ -25,7 +25,7 @@ fetch(UrlArtist + artistId)
     coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
     coverImgRef.style.backgroundSize = "cover";
     coverImgRef.style.height = "350px";
-    coverImgRef.style.backgroundPositionY = "center";
+    coverImgRef.style.backgroundPositionY = "25%";
     artistNameRef.innerHTML = `
         <h2 class="artistTitle text-light">${artists.name}</h2>
         `;
@@ -52,7 +52,7 @@ fetch(UrlArtist + artistId + topSongs)
         let singleSong = document.createElement("div")
         singleSong.classList.add("d-flex", "align-items-center")
         singleSong.innerHTML = `
-        <div style="width:56px; height:56px; background-image:url("${song.album.cover}");"></div>
+        <div style="width:56px; height:56px; background-image:url('${song.album.cover_small}')"></div>
         <p class="text-light mb-0">${song.title}</p>
         `
         

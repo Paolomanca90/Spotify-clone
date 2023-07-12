@@ -12,7 +12,7 @@ let mixAlbum = []
 let recentAlbum = []
 
 const randomNumber = function(){
-    let num = Math.floor(Math.random()*26)
+    let num = Math.floor(Math.random()*25)
     return num
 }
 
@@ -343,12 +343,14 @@ const searchResult = function(value){
             mixForYou()  
             recentAlbum = []
             for (let i=0; i<4; i++){
+                console.log("DATA", data.data.length)
                 const randomN = function(){
                     let random = randomNumber()
                     if(recentAlbum.includes(data.data[random].album.id)){
                         randomN()
                     }else{
-                        recentAlbum.push(data.data[random].album.id)   
+                        recentAlbum.push(data.data[random].album.id)  
+
                         }
                     }
                     randomN()      
