@@ -3,10 +3,6 @@ const UrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const coverImgRef = document.getElementById("coverImageArtist");
 const artistNameRef = document.getElementById("artistName");
 const monthlyListenersRef = document.getElementById("monthlyListeners");
-
-const coverImgRef = document.getElementById("coverImageArtist");
-const artistNameRef = document.getElementById("artistName");
-const monthlyListenersRef = document.getElementById("monthlyListeners");
 const centerDiv = document.getElementById("center");
 
 const addressBarContent = new URLSearchParams(location.search);
@@ -91,7 +87,6 @@ const showPlaylist = function () {
   });
 };
 
-getArtist();
 showPlaylist();
 
 // ANIMAZIONE COVER
