@@ -63,19 +63,18 @@ fetch(UrlArtist + artistId + topSongs)
         songColumn.appendChild(singleSong)
       })
       console.log("Array", songs)
-      const randNumber = randomNumber()
       let createLiked = function(){
-
-      }
-        songs.data[randNumber]
+        const randNumber = randomNumber()
         let likedSong = document.createElement("div")
         likedSong.classList.add("d-flex", "align-items-center", "mt-4")
         likedSong.innerHTML = `
-        <div style="width:56px; height:56px; background-image:url('${songs.album.cover}')"></div>
-        <p class="text-light mb-0 ps-3">${songs.title}</p>
+        <div style="width:56px; height:56px; background-image:url('${songs.data[randNumber].album.cover_small}')"></div>
+        <p class="text-light mb-0 ps-3">${songs.data[randNumber].title}</p>
         `
         likedColumn = document.getElementById("liked-songs")
         likedColumn.appendChild(likedSong)
+      }
+      createLiked()
       })
   .catch((err) => {
     console.log(err);
