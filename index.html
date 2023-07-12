@@ -24,30 +24,43 @@
       <nav
         class="navbar navbar-expand-lg d-flex justify-content-start flex-column"
       >
-        <div class="container-fluid align-items-start px-2">
+        <div class="container-fluid align-items-start p-0 ps-2">
           <div
             class="collapse navbar-collapse flex-column"
             id="navbarSupportedContent"
           >
             <ul
-              class="navbar-nav mb-2 mb-lg-0 d-flex flex-column text-light rounded bg-dark"
+              class="navbar-nav mb-2 mb-lg-0 d-flex flex-column text-light rounded bg-dark position-sticky"
             >
-              <li class="nav-item">
+              <li id="homeB" class="nav-item">
                 <a
                   class="nav-link active text-light"
                   aria-current="page"
                   href="#"
-                  ><i class="bi bi-house-door"></i> Home</a
+                  ><i id="home-empty" class="bi bi-house-door"></i
+                  ><i class="bi bi-house-door-fill d-none"></i> Home</a
                 >
               </li>
-              <li class="nav-item">
+              <li id="searchB" class="nav-item">
                 <a class="nav-link text-light" href="#"
-                  ><i class="bi bi-search"></i> Cerca</a
+                  ><i id="search-empty" class="bi bi-search"></i> Cerca</a
                 >
+                <form class="d-flex d-none px-2 pb-2 pt-0" role="search">
+                  <input
+                    id="searchF"
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-secondary" type="submit">
+                    Search
+                  </button>
+                </form>
               </li>
             </ul>
             <ul
-              class="navbar-nav mt-2 mb-2 mb-lg-0 d-flex flex-column text-light rounded bg-dark"
+              class="navbar-nav mt-2 mb-2 d-flex flex-column text-light rounded bg-dark"
             >
               <li class="nav-item d-flex flex-column">
                 <div>
@@ -84,56 +97,59 @@
                 </div>
               </li>
               <li class="nav-item">
-                <div>
-                  <form class="d-flex" role="search">
-                    <input
-                      class="form-control me-2"
-                      type="search"
-                      placeholder="Search"
-                      aria-label="Search"
-                    />
-                    <div class="nav-item dropdown">
-                      <a
-                        class="nav-link dropdown-toggle text-light"
-                        href="#"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Recenti
-                      </a>
-                      <ul class="dropdown-menu bg-secondary">
-                        <li>
-                          <a class="dropdown-item text-light" href="#"
-                            >Autore</a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item text-light" href="#"
-                            >Ordine alfabetico</a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item text-light" href="#"
-                            >Aggiunti di recente</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </form>
+                <div class="d-flex align-items-center">
+                  <div class="container p-0 ps-2">
+                    <form>
+                      <input type="checkbox" id="checkbox" />
+                      <div class="search-box">
+                        <input type="text" placeholder="Cerca nella libreria" />
+                        <label for="checkbox" class="icon">
+                          <i class="bi bi-search"></i>
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle text-light"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Recenti
+                    </a>
+                    <ul class="dropdown-menu bg-secondary">
+                      <li>
+                        <a class="dropdown-item text-light" href="#">Autore</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-light" href="#"
+                          >Ordine alfabetico</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-light" href="#"
+                          >Aggiunti di recente</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="nav-item d-lg-none">
                 <a class="nav-link text-light">Scarica l'app</a>
               </li>
+              <li class="nav-item">
+                <div id="playlist-section">
+                  <ul id="lista-playlist" class="list-unstyled px-1 py-3"></ul>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
-        <div id="playlist-section" class="mt-3">
-          <ul id="lista-playlist" class="list-unstyled"></ul>
-        </div>
       </nav>
-      <div id="center" class="rounded mt-2 text-light">
+      <div id="center" class="rounded mt-2 mx-2 text-light">
         <header
           class="d-flex justify-content-between p-3 position-sticky z-1 rounded-top"
         >
@@ -170,7 +186,7 @@
             </ul>
           </div>
         </header>
-        <main class="p-3 h-100">
+        <main class="p-3">
           <h2 class="mt-4 fw-bold">Buon pomeriggio</h2>
           <div class="container-fluid p-0 mb-5">
             <div class="row g-3" id="first-row"></div>
@@ -189,7 +205,7 @@
           </div>
         </main>
       </div>
-      <aside id="right" class="p-3 d-flex flex-column m-2 d-none d-xl-block">
+      <aside id="right" class="d-flex flex-column m-2 ms-0 d-none d-xl-block">
         <div id="aside-title" class="d-flex justify-content-between mb-3">
           <h6>Friends activity</h6>
           <div>
@@ -248,46 +264,58 @@
         </div>
       </aside>
     </div>
-    <footer class="bg-dark border-top text-light position-fixed bottom-0 w-100">
+    <footer class="text-light position-fixed bottom-0 w-100">
       <div class="container-fluid">
         <div class="row d-md-flex justify-content-between">
-          <div class="col col-4 d-flex align-items-center">
-            <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
-              <img src="./assets/imgs/IMG-Claudio.jpg" alt="image">
+          <div
+            class="col col-sm-12 d-md-none my-2 d-flex align-items-center justify-content-between"
+          >
+            <div class="d-flex align-items-center justify-content-center">
+              <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
+                <img src="./assets/imgs/IMG-Claudio.jpg" alt="image" />
+              </div>
+              <p class="mx-2 fs-5 text mb-0">Song Name</p>
             </div>
-            
-            <div class="d-flex flex-column align-self-center pt-3">
-              <p class="mx-2">Song Name</p>
-              <p class="mx-2 d-none d-md-block ">Artist Name</p>
+            <div class="d-flex align-items-center justify-content-center">
+              <a href="#" class="text-decoration-none text-light"
+                ><i class="bi bi-speaker px-2"></i
+              ></a>
+              <div><i class="bi bi-heart px-2" id="heartIcon"></i></div>
+              <div>
+                <i class="bi bi-play-fill px-2" id="playPauseSmall"></i>
+              </div>
             </div>
-            <div><i class="bi bi-heart mx-2" id="heartIcon"></i></div>
           </div>
-          <div class="col-4 d-flex flex-column align-self-center">
-            <div class="d-flex justify-content-center">
-              <a href="#" id="colorToggleShuffle"
-                ><i class="bi bi-shuffle px-2" id="shuffleIcon"></i
-              ></a>
-              <i class="bi bi-skip-backward px-3"></i>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="currentColor"
-                class="bi bi-play-circle-fill"
-                viewBox="0 0 16 16"
-                id="playPauseSvg"
-              >
-                <path
-                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"
-                />
-              </svg>
-              <i class="bi bi-skip-forward px-3"></i>
-              <a href="#" id="colorToggleRepeat"
-                ><i class="bi bi-repeat px-2" id="repeatIcon"></i
-              ></a>
+          <div class="col-4 d-none d-md-flex align-items-center">
+            <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
+              <img src="./assets/imgs/IMG-Claudio.jpg" alt="image" />
             </div>
+
+            <div class="d-flex flex-column align-self-center pt-3">
+              <p class="mx-2 fs-5 text mb-0">Song Name</p>
+              <p class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light">
+                Artist Name
+              </p>
+            </div>
+            <div><i class="bi bi-heart mx-2" id="heartIconBig"></i></div>
+          </div>
+          <div
+            class="col col-md-4 d-none d-md-block d-flex flex-column align-self-center"
+          >
+            <div class="d-flex justify-content-center align-items-center pt-2">
+              <a href="#" id="colorToggleShuffle">
+                <i class="bi bi-shuffle px-2" id="shuffleIcon"></i>
+              </a>
+              <i class="bi bi-skip-backward px-3"></i>
+              <i class="bi bi-play-circle-fill mx-2 fs-2" id="playPause"></i>
+              <i class="bi bi-skip-forward px-3"></i>
+              <a href="#" id="colorToggleRepeat">
+                <i class="bi bi-repeat px-2" id="repeatIcon"></i>
+              </a>
+            </div>
+
             <div class="d-flex align-items-center justify-content-between">
-              <p class="m-0">0:05</p>
+              <p class="m-0" id="songStartPoint">0:00</p>
               <input
                 type="range"
                 name="bi-volume-down"
@@ -295,13 +323,13 @@
                 min="0"
                 max="100"
                 value="30"
-                class="bg-dark px-2"
+                class="px-2"
               />
-              <p class="m-0">4:26</p>
+              <p class="m-0" id="songEndPoint">4:26</p>
             </div>
           </div>
           <div
-            class="col col-4 d-flex flex-row align-items-center justify-content-end"
+            class="col col-4 d-none d-md-flex flex-row align-items-center justify-content-end"
           >
             <a href="#" class="text-decoration-none text-light"
               ><i class="bi bi-mic px-2"></i
@@ -322,7 +350,6 @@
               min="0"
               max="100"
               value="60"
-              class="bg-dark"
             />
             <a href="#" class="text-decoration-none text-light"
               ><i class="bi bi-arrows-angle-expand px-2"></i
