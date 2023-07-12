@@ -116,10 +116,10 @@ const getAlbum = function() {
                 firstRow.appendChild(newCol) 
                 const firstRowDivs = document.querySelectorAll('.spotify-div')
                 console.log(firstRowDivs)
-                const firstRowDiv = firstRowDivs[i]
+                const firstRowDiv = firstRowDivs[firstRowDivs.length-1]
                 console.log(firstRowDiv)
                 const spotyPlays = document.querySelectorAll('.spotify-play')
-                const spotyPlay = spotyPlays[i]
+                const spotyPlay = spotyPlays[firstRowDivs.length-1]
                 firstRowDiv.addEventListener('mouseover', function(){
                     spotyPlay.classList.remove('d-none')
                 })
