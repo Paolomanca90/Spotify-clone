@@ -17,6 +17,10 @@ const randomNumber = function(){
   return num
 }
 
+let convert = function(value) {
+  return Math.floor(value / 60) + ":" + (value % 60)
+}
+
 fetch(UrlArtist + artistId)
   .then((artist) => {
     if (artist.ok) {
@@ -59,7 +63,7 @@ fetch(UrlArtist + artistId + topSongs)
         singleSong.innerHTML = `
         <div style="width:56px; height:56px; background-image:url('${song.album.cover_small}')"></div>
         <p class="text-light mb-0 ps-3">${song.title}</p>
-        <p class="text-secondary ms-auto">${(song.duration / 60).toFixed(2)}</p>
+        <p class="text-secondary ms-auto">${convert(song.duration)}</p>
         `
         songColumn = document.getElementById("songs-column")
         songColumn.appendChild(singleSong)
