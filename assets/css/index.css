@@ -85,6 +85,7 @@ footer #volumeScrollBar {
 
 #center {
   flex-grow: 1;
+  width: 50%;
   height: calc(100vh - 112px);
   overflow: auto;
   background: linear-gradient(180deg, rgb(6, 130, 17) 0%, rgb(30, 31, 30) 25%, rgb(14, 13, 13) 100%);
@@ -200,4 +201,33 @@ html::-webkit-scrollbar,
 
 .nav-expand {
   width: 30% !important;
+}
+
+@media screen and (max-width: 992px) {
+  #container {
+    flex-direction: column-reverse;
+  }
+  #container nav {
+    width: 100%;
+  }
+  #container nav .container-fluid {
+    padding-right: 8px !important;
+  }
+  #container nav .container-fluid div {
+    flex-direction: row !important;
+  }
+  #container nav .container-fluid div ul {
+    margin-top: 0 !important;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+  }
+  #container nav .container-fluid div #homeB span,
+  #container nav .container-fluid div #searchB span,
+  #container nav .container-fluid div #second-ul span,
+  #container nav .container-fluid div #nav-links,
+  #container nav .container-fluid div #playlist-section,
+  #container nav .container-fluid div #my-search,
+  #container nav .container-fluid div #library-icons {
+    display: none;
+  }
 }/*# sourceMappingURL=index.css.map */
