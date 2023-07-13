@@ -243,7 +243,7 @@
         </div>
         <main>
           <div class="container">
-            <div class="play-follow d-flex align-items-center pt-4">
+            <div class="play-follow d-flex align-items-center pt-4 mb-4">
               <div id="circle-play" class="me-4">
                 <img
                   src="./assets/imgs/Spotify-Play-Button-Black.png"
@@ -274,12 +274,25 @@
                 </ul>
               </div>
             </div>
-            <div id="album-songs-container">
+            <div id="album-songs-container mt-4 mb-4">
               <div class="row">
-                <div class="col">#</div>
-                <div class="col">Titolo</div>
-                <div class="col">
-                  <i class="bi bi-clock"></i>
+                <div
+                  class="col col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 mb-3"
+                  id="song-number"
+                >
+                  <p class="fw-bold">#</p>
+                </div>
+                <div
+                  class="col col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-4"
+                  id="song-title"
+                >
+                  <p class="fw-bold">Titolo</p>
+                </div>
+                <div
+                  class="col col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+                  id="song-duration"
+                >
+                  <p><i class="bi bi-clock mb fw-bold"></i></p>
                 </div>
               </div>
             </div>
