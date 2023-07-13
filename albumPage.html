@@ -36,7 +36,7 @@
                 <a
                   class="nav-link active text-light"
                   aria-current="page"
-                  href="#"
+                  href="index.html"
                   ><i id="home-empty" class="bi bi-house-door fs-4 px-2"></i
                   ><i class="bi bi-house-door-fill d-none fs-4 px-2"></i>
                   <span>Home</span></a
@@ -188,7 +188,7 @@
           </div>
         </div>
       </nav>
-      <div id="center">
+      <div id="center" class="rounded mt-2 mx-2 text-light">
         <header
           class="d-flex justify-content-between p-3 position-sticky z-1 rounded-top"
         >
@@ -224,21 +224,23 @@
               <li><a class="dropdown-item" href="#">Log out</a></li>
             </ul>
           </div>
-          <div class="container d-flex">
-            <div id="cover-album"></div>
-            <div>
+        </header>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 g-5">
+            <div id="cover-album" class="col ms-5"></div>
+            <div class="col d-flex flex-column justify-content-around">
               <div>
-                <p class="text-light fw-bold">ALBUM</p>
+                <p class="text-light fw-bold mt-5">ALBUM</p>
               </div>
               <div>
-                <h1 id="album-name"></h1>
+                <h1 id="album-name" class="text-light"></h1>
               </div>
               <div>
-                <p id="album-info"></p>
+                <p id="album-info" class="text-light"></p>
               </div>
             </div>
           </div>
-        </header>
+        </div>
         <main>
           <div class="container">
             <div class="play-follow d-flex align-items-center pt-4">
@@ -249,26 +251,36 @@
                   style="height: 75px"
                 />
               </div>
-              <div id="follow" class="me-4">
-                <button type="button" class="btn btn-outline-light fw-bold">
-                  FOLLOW
-                </button>
+              <div id="follow" class="me-4 ms-4">
+                <i class="bi bi-heart fs-1"></i>
               </div>
-              <div class="dropdown me-4">
+              <div class="me-4 ms-4">
+                <i class="bi bi-file-arrow-down fs-1"></i>
+              </div>
+              <div class="dropdown me-4 ms-4">
                 <button
                   type="button"
-                  class="btn btn-secondary dropdown-toggle"
+                  class="btn"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropstart
+                  <i class="bi bi-three-dots text-light fs-1"></i>
                 </button>
                 <ul class="dropdown-menu bg-black">
-                  <li class="ms-2 text-light">Segui</li>
-                  <li class="ms-2 text-light">Vai alla radio dell'artista</li>
-                  <li class="ms-2 text-light">Segnala</li>
+                  <li class="ms-2 text-light">Vai a radio dell'artista</li>
+                  <li class="ms-2 text-light">Aggiungi alla tua libreria</li>
+                  <li class="ms-2 text-light">Aggiungi alla playlist</li>
                   <li class="ms-2 text-light">Condividi</li>
                 </ul>
+              </div>
+            </div>
+            <div id="album-songs-container">
+              <div class="row">
+                <div class="col">#</div>
+                <div class="col">Titolo</div>
+                <div class="col">
+                  <i class="bi bi-clock"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -442,6 +454,7 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/albumPage.js"></script>
     <!-- <script src="scripts/index.js"></script> -->
     <script src="scripts/player.js"></script>
   </body>
