@@ -126,9 +126,8 @@ btnPlay.addEventListener("click", () => {
 
 // VOLUME
 const input = document.querySelector("#volume");
-console.log(audioElement.volume);
+
 input.addEventListener("change", (event) => {
-  console.log(audioElement.volume);
   audioElement.volume = event.target.value;
 });
 
@@ -165,3 +164,13 @@ function progressUpdate() {
   const percent = (audioElement.currentTime / audioElement.duration) * 100;
   progressFilled.style.flexBasis = `${percent}%`;
 }
+
+// Reset player
+audioElement.addEventListener("ended", () => {
+  console.log("ciao");
+  btnPlay.dataset.playing = "false";
+  // playPauseIcon.classList.toggle("bi-pause-fill");
+  progressFilled.style.flexBasis = "0%";
+  audioElement.currentTime = 0;
+  audioElement.duration = audioElement.duration;
+});
