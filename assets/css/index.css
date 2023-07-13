@@ -85,6 +85,7 @@ footer #volumeScrollBar {
 
 #center {
   flex-grow: 1;
+  width: 50%;
   height: calc(100vh - 112px);
   overflow: auto;
   background: linear-gradient(180deg, rgb(6, 130, 17) 0%, rgb(30, 31, 30) 25%, rgb(14, 13, 13) 100%);
