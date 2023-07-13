@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Artists - Spotify</title>
+    <title>Album - Spotify</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -224,28 +224,21 @@
               <li><a class="dropdown-item" href="#">Log out</a></li>
             </ul>
           </div>
-        </header>
-        <div class="m-0 p-0 d-flex" id="coverImageArtist">
-          <div class="align-self-end mb-4 ms-4">
-            <div id="verified" class="d-flex align-items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-patch-check-fill text-primary me-1"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
-                />
-              </svg>
-              <p class="fs-6 text-light m-0 ps-2">Artista verificato</p>
+          <div class="container d-flex">
+            <div id="cover-album"></div>
+            <div>
+              <div>
+                <p class="text-light fw-bold">ALBUM</p>
+              </div>
+              <div>
+                <h1 id="album-name"></h1>
+              </div>
+              <div>
+                <p id="album-info"></p>
+              </div>
             </div>
-            <div id="artistName" class="my-4"></div>
-            <div id="monthlyListeners"></div>
           </div>
-        </div>
+        </header>
         <main>
           <div class="container">
             <div class="play-follow d-flex align-items-center pt-4">
@@ -276,19 +269,6 @@
                   <li class="ms-2 text-light">Segnala</li>
                   <li class="ms-2 text-light">Condividi</li>
                 </ul>
-              </div>
-            </div>
-            <div id="container-songs" class="container p-3">
-              <div id="songs-row gy-5" class="row">
-                <div class="col col-12 col-lg-8 my-4 pe-3" id="songs-column">
-                  <h5 class="fw-bold text-light">Popolari</h5>
-                </div>
-                <div
-                  class="col col-12 col-lg-4 text-light my-4"
-                  id="liked-songs"
-                >
-                  <h5 class="fw-bold">Brani che ti piacciono</h5>
-                </div>
               </div>
             </div>
           </div>
@@ -462,7 +442,6 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script src="scripts/artistPage.js"></script>
     <!-- <script src="scripts/index.js"></script> -->
     <script src="scripts/player.js"></script>
   </body>
