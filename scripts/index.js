@@ -291,7 +291,7 @@ const recentForYou = function() {
     )
 }
 
-const searchForm = document.querySelector('#searchB form')
+const searchForm = document.querySelector('header form')
 searchForm.addEventListener('submit', function(e){
   e.preventDefault()
   const mySearch = document.querySelector('#searchF')
@@ -385,9 +385,7 @@ const homeButton = document.querySelector('#homeB a')
 homeButton.addEventListener('click', homeB)
 
 const searchB = function(){
-    const searchButton = document.querySelector('#searchB a')
-    searchButton.classList.add('d-none')
-    const searchForm = document.querySelector('#searchB form')
+    const searchForm = document.querySelector('header form')
     searchForm.classList.remove('d-none')
 }
 
