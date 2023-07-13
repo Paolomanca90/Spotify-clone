@@ -155,22 +155,33 @@ const getAlbum = function () {
         });
 
         // RECUPERO DATI PLAYER
-        const playerImageSong = document.getElementById("playerImage");
-        const titleElement = document.getElementById("songNameForPlayer");
+        const playerImageSongSmall =
+          document.getElementById("playerImageSmall");
+        const playerImageSongBig = document.getElementById("playerImageBig");
+        const ArtistNamePlayer = document.getElementById("artistNameForPlayer");
+        const titleSongSmall = document.getElementById(
+          "songNameForPlayerSmall"
+        );
+        const titleElementBig = document.getElementById("songNameForPlayerBig");
         const subtitleElement = document.getElementById("artistNameForPlayer");
 
         // SOURCE SONG
         const songSource = document.getElementById("audioSource");
+        const audioElement = document.querySelector("audio");
         console.log("old source", songSource);
-        firstRowDiv.addEventListener("click", function () {
-          console.log("Risultato", data.tracks.data[0].preview);
+        firstRowDiv.addEventListener("dblclick", function () {
           songSource.setAttribute("src", `${data.tracks.data[0].preview}`);
+          audioElement.play();
           console.log("new source", songSource);
+
           // Recupero dati per player
-          playerImageSong.setAttribute("src", `${data.cover_small}`);
-          songTitle = data.tracks.data[0].title;
-          console.log("titolo song", songTitle);
-          titleElement.innerText = songTitle;
+          playerImageSongSmall.setAttribute("src", `${data.cover_small}`);
+          playerImageSongBig.setAttribute("src", `${data.cover_small}`);
+          let songTitle = data.tracks.data[0].title;
+          let artistName = data.artist.name;
+          titleSongSmall.innerText = songTitle;
+          titleElementBig.innerText = songTitle;
+          ArtistNamePlayer.innerText = artistName;
         });
       })
       .catch((err) => {
@@ -481,16 +492,16 @@ const playlistS = document.querySelector("#playlist-section");
 const mySearchBox = document.querySelector("#my-search");
 const libIcons = document.querySelector("#library-icons");
 const nav = document.querySelector("nav");
-library.addEventListener("click", function () {
-  spanH.classList.toggle("d-none");
-  spanS.classList.toggle("d-none");
-  ulSpan.classList.toggle("d-none");
-  navLinks.classList.toggle("d-none");
-  playlistS.classList.toggle("d-none");
-  mySearchBox.classList.toggle("d-none");
-  libIcons.classList.toggle("d-none");
-  nav.classList.toggle("nav-width");
-});
+// library.addEventListener("click", function () {
+//   spanH.classList.toggle("d-none");
+//   spanS.classList.toggle("d-none");
+//   ulSpan.classList.toggle("d-none");
+//   navLinks.classList.toggle("d-none");
+//   playlistS.classList.toggle("d-none");
+//   mySearchBox.classList.toggle("d-none");
+//   libIcons.classList.toggle("d-none");
+//   nav.classList.toggle("nav-width");
+// });
 
 const arrow = document.querySelector(".bi-arrow-right-short");
 const arrowLeft = document.querySelector(".bi-arrow-left-short");
@@ -500,8 +511,8 @@ arrow.addEventListener("click", function () {
   arrowLeft.classList.remove("d-none");
 });
 
-arrowLeft.addEventListener("click", function () {
-  nav.classList.remove("nav-expand");
-  arrow.classList.remove("d-none");
-  arrowLeft.classList.add("d-none");
-});
+// arrowLeft.addEventListener("click", function () {
+//   nav.classList.remove("nav-expand");
+//   arrow.classList.remove("d-none");
+//   arrowLeft.classList.add("d-none");
+// });

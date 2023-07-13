@@ -299,14 +299,14 @@
             class="col col-sm-12 d-md-none my-2 d-flex align-items-center justify-content-between"
           >
             <div class="d-flex align-items-center justify-content-center">
-              <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
+              <div class="imageContainer mx-2 rounded-circle rounded-sm-0">
                 <img
-                  id="playerImage"
+                  id="playerImageSmall"
                   src="./assets/imgs/IMG-Claudio.jpg"
                   alt="image"
                 />
               </div>
-              <p id="songNameForPlayer" class="mx-2 fs-5 text mb-0">
+              <p id="songNameForPlayerBig" class="mx-2 fs-5 text mb-0">
                 Song Name
               </p>
             </div>
@@ -321,12 +321,16 @@
             </div>
           </div>
           <div class="col-4 d-none d-md-flex align-items-center">
-            <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
-              <img src="./assets/imgs/IMG-Claudio.jpg" alt="image" />
+            <div class="imageContainer mx-2 rounded-circle rounded-sm-0">
+              <img
+                id="playerImageBig"
+                src="./assets/imgs/IMG-Claudio.jpg"
+                alt="image"
+              />
             </div>
 
             <div class="d-flex flex-column align-self-center pt-3">
-              <p id="songNameForPlayer" class="mx-2 fs-5 text mb-0">
+              <p id="songNameForPlayerSmall" class="mx-2 fs-5 text mb-0">
                 Song Name
               </p>
               <p
@@ -399,7 +403,11 @@
         </div>
       </div>
       <audio crossorigin="anonymous">
-        <source id="audioSource" src="" type="audio/mpeg" />
+        <source
+          id="audioSource"
+          src="https://cdns-preview-5.dzcdn.net/stream/c-5a9b2da5acb610170196eb5872c7d2ab-17.mp3"
+          type="audio/mpeg"
+        />
         >
       </audio>
     </footer>

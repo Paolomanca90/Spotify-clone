@@ -107,12 +107,12 @@ input[type="range"]:focus::-ms-fill-upper {
 
 /* CSS FOR IMAGE CONTAINER */
 
-#imageContainer {
+.imageContainer {
   max-width: 60px;
   max-height: 60px;
 }
 
-#imageContainer img {
+.imageContainer img {
   max-width: 60px;
   max-height: 60px;
 }
