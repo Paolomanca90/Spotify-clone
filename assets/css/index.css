@@ -57,22 +57,22 @@ footer #volumeScrollBar {
 }
 
 #aside-title {
-  font-size: 0.8em;
+  font-size: 1.3em;
 }
 #aside-title i {
   cursor: pointer;
 }
 
 .friend {
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .friend img {
-  width: 15%;
-  height: 50%;
+  width: 4.5em;
+  height: 4.5em;
   border-radius: 50%;
 }
 .friend .antonio {
-  width: 2.5em;
+  width: 6.5em;
 }
 
 .center {
@@ -149,7 +149,7 @@ footer #volumeScrollBar {
 }
 
 #second-ul {
-  height: calc(100vh - 214px);
+  height: calc(100vh - 224px);
   overflow: auto;
 }
 
@@ -179,7 +179,9 @@ html::-webkit-scrollbar,
 }
 
 .spotify-play {
-  width: 20%;
+  width: 3em;
+  margin: 0;
+  padding: 0;
 }
 
 .plus-menu {
@@ -193,7 +195,7 @@ html::-webkit-scrollbar,
 }
 
 .nav-width {
-  width: 5% !important;
+  width: 4.3% !important;
 }
 
 .nav-expand {

@@ -1,6 +1,8 @@
 const UrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const topSongs = "/top?limit=50"
 
+let myUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+
 const coverImgRef = document.getElementById("coverImageArtist");
 const artistNameRef = document.getElementById("artistName");
 const monthlyListenersRef = document.getElementById("monthlyListeners");
@@ -10,7 +12,10 @@ const centerDiv = document.getElementById("center");
 const addressBarContent = new URLSearchParams(location.search);
 const artistId = addressBarContent.get("id");
 
-// Fare un contenitore track e pushare dentro le api delle tracklist stringifizzate
+const randomNumber = function(){
+  let num = Math.floor(Math.random()*5)
+  return num
+}
 
 fetch(UrlArtist + artistId)
   .then((artist) => {
@@ -25,7 +30,7 @@ fetch(UrlArtist + artistId)
     coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
     coverImgRef.style.backgroundSize = "cover";
     coverImgRef.style.height = "350px";
-    coverImgRef.style.backgroundPositionY = "25%";
+    coverImgRef.style.backgroundPositionY = "35%";
     artistNameRef.innerHTML = `
         <h2 class="artistTitle text-light">${artists.name}</h2>
         `;
@@ -50,21 +55,48 @@ fetch(UrlArtist + artistId + topSongs)
     songs.data.forEach((song) =>{
         console.log("song", song)
         let singleSong = document.createElement("div")
-        singleSong.classList.add("d-flex", "align-items-center")
+        singleSong.classList.add("d-flex", "align-items-center", "mt-4")
         singleSong.innerHTML = `
         <div style="width:56px; height:56px; background-image:url('${song.album.cover_small}')"></div>
-        <p class="text-light mb-0">${song.title}</p>
+        <p class="text-light mb-0 ps-3">${song.title}</p>
+        <p class="text-secondary ms-auto">${(song.duration / 60).toFixed(2)}</p>
         `
-        
-        // albumCover.style.height = "56px"
-        // albumCover.style.width = "56px"
-        // albumCover.style.backgroundImage = `url(${album.album.cover_small})`
         songColumn = document.getElementById("songs-column")
         songColumn.appendChild(singleSong)
-    })
-}) .catch((err) => {
+      })
+      console.log("Array", songs)
+      let createLiked = function(){
+        const randNumber = randomNumber()
+        let likedSong = document.createElement("div")
+        likedSong.classList.add("d-flex", "align-items-center", "mt-4")
+        likedSong.innerHTML = `
+        <div style="width:56px; height:56px; background-image:url('${songs.data[randNumber].album.cover_small}')"></div>
+        <p class="text-light mb-0 ps-3">${songs.data[randNumber].title}</p>
+        `
+        likedColumn = document.getElementById("liked-songs")
+        likedColumn.appendChild(likedSong)
+      }
+      createLiked()
+      })
+  .catch((err) => {
     console.log(err);
 })
+
+fetch(UrlArtist+artistId)
+.then((data) =>{
+  if (data.ok) {
+      return data.json();
+  } else {
+      throw new Error ("Errore nel caricamento delle canzoni")
+  }
+})
+.then((albums)=> {
+  console.log("ALBUMS", albums)
+})
+.catch((err) => {
+  console.log(err);
+})
+
 
 const playlist = [
   "culetto 2021",
