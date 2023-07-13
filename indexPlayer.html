@@ -300,9 +300,15 @@
           >
             <div class="d-flex align-items-center justify-content-center">
               <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
-                <img src="./assets/imgs/IMG-Claudio.jpg" alt="image" />
+                <img
+                  id="playerImage"
+                  src="./assets/imgs/IMG-Claudio.jpg"
+                  alt="image"
+                />
               </div>
-              <p class="mx-2 fs-5 text mb-0">Song Name</p>
+              <p id="songNameForPlayer" class="mx-2 fs-5 text mb-0">
+                Song Name
+              </p>
             </div>
             <div class="d-flex align-items-center justify-content-center">
               <a href="#" class="text-decoration-none text-light"
@@ -320,8 +326,13 @@
             </div>
 
             <div class="d-flex flex-column align-self-center pt-3">
-              <p class="mx-2 fs-5 text mb-0">Song Name</p>
-              <p class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light">
+              <p id="songNameForPlayer" class="mx-2 fs-5 text mb-0">
+                Song Name
+              </p>
+              <p
+                id="artistNameForPlayer"
+                class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light"
+              >
                 Artist Name
               </p>
             </div>
@@ -388,10 +399,7 @@
         </div>
       </div>
       <audio crossorigin="anonymous">
-        <source
-          src="https://cdns-preview-5.dzcdn.net/stream/c-5a9b2da5acb610170196eb5872c7d2ab-17.mp3"
-          type="audio/mpeg"
-        />
+        <source id="audioSource" src="" type="audio/mpeg" />
         >
       </audio>
     </footer>

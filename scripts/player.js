@@ -109,6 +109,8 @@ imageContainer.addEventListener("click", async () => {
   subtitleElement.textContent = data.artistName;
 });
 
+//
+//
 // FUNZIONI PLAYER
 
 const btnPlay = document.getElementById("playPause");
@@ -126,7 +128,7 @@ btnPlay.addEventListener("click", () => {
 
 // VOLUME
 const input = document.querySelector("#volume");
-
+console.log(audioElement.volume);
 input.addEventListener("change", (event) => {
   audioElement.volume = event.target.value;
 });
@@ -165,12 +167,27 @@ function progressUpdate() {
   progressFilled.style.flexBasis = `${percent}%`;
 }
 
-// Reset player
+// RESET PLAYER
 audioElement.addEventListener("ended", () => {
   console.log("ciao");
   btnPlay.dataset.playing = "false";
+  // playPauseIcon.classList.toggle("bi-play-circle-fill");
   // playPauseIcon.classList.toggle("bi-pause-fill");
   progressFilled.style.flexBasis = "0%";
   audioElement.currentTime = 0;
   audioElement.duration = audioElement.duration;
 });
+
+// SCRUB PLAYER TIMELINE
+const progress = document.querySelector(".player-progress");
+
+let mousedown = false;
+function scrub(event) {
+  const scrubTime =
+    (event.offsetX / progress.offsetWidth) * audioElement.duration;
+  audioElement.currentTime = scrubTime;
+}
+progress.addEventListener("click", scrub);
+progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));

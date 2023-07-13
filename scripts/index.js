@@ -153,6 +153,25 @@ const getAlbum = function () {
         firstRowDiv.addEventListener("mouseleave", function () {
           spotyPlay.classList.add("d-none");
         });
+
+        // RECUPERO DATI PLAYER
+        const playerImageSong = document.getElementById("playerImage");
+        const titleElement = document.getElementById("songNameForPlayer");
+        const subtitleElement = document.getElementById("artistNameForPlayer");
+
+        // SOURCE SONG
+        const songSource = document.getElementById("audioSource");
+        console.log("old source", songSource);
+        firstRowDiv.addEventListener("click", function () {
+          console.log("Risultato", data.tracks.data[0].preview);
+          songSource.setAttribute("src", `${data.tracks.data[0].preview}`);
+          console.log("new source", songSource);
+          // Recupero dati per player
+          playerImageSong.setAttribute("src", `${data.cover_small}`);
+          songTitle = data.tracks.data[0].title;
+          console.log("titolo song", songTitle);
+          titleElement.innerText = songTitle;
+        });
       })
       .catch((err) => {
         console.log("ERR", err);
