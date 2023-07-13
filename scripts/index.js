@@ -171,6 +171,7 @@ const getAlbum = function () {
         console.log("old source", songSource);
         firstRowDiv.addEventListener("dblclick", function () {
           songSource.setAttribute("src", `${data.tracks.data[0].preview}`);
+          audioElement.load();
           audioElement.play();
           console.log("new source", songSource);
 
