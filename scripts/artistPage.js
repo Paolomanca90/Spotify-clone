@@ -154,3 +154,61 @@ sezioneCentrale.addEventListener("scroll", () => {
   document.getElementById("coverImageArtist").style.opacity =
     1 - scrollTop / 250;
 });
+
+
+const iconX = document.querySelector(".bi-x-lg");
+const aside = document.querySelector("aside");
+iconX.addEventListener("click", function () {
+  aside.classList.remove("d-xl-block");
+});
+
+const library = document.querySelector('#library')
+const spanH = document.querySelector('#homeB span')
+const spanS = document.querySelector('#searchB span')
+const spanF = document.querySelector('#searchB form')
+const ulSpan = document.querySelector('#second-ul span')
+const navLinks = document.querySelector('#nav-links')
+const playlistS = document.querySelector('#playlist-section')
+const mySearchBox = document.querySelector('#my-search')
+const libIcons = document.querySelector('#library-icons')
+const nav = document.querySelector('nav')
+library.addEventListener('click', function(){
+    spanH.classList.toggle('d-none')
+    spanS.classList.toggle('d-none')
+    // spanF.classList.add('d-none')
+    ulSpan.classList.toggle('d-none')
+    navLinks.classList.toggle('d-none')
+    playlistS.classList.toggle('d-none')
+    mySearchBox.classList.toggle('d-none')
+    libIcons.classList.toggle('d-none')
+    nav.classList.toggle('nav-width')
+})
+
+const arrow = document.querySelector('.bi-arrow-right-short')
+const arrowLeft = document.querySelector('.bi-arrow-left-short')
+arrow.addEventListener('click', function(){
+    nav.classList.add('nav-expand')
+    arrow.classList.add('d-none')
+    arrowLeft.classList.remove('d-none')
+})
+
+arrowLeft.addEventListener('click', function(){
+    nav.classList.remove('nav-expand')
+    arrow.classList.remove('d-none')
+    arrowLeft.classList.add('d-none')
+})
+
+// const catchUrl = function(){  
+//   const addressBarContent = document.location.href
+//   localStorage.setItem('addressBar', JSON.stringify(addressBarContent))
+// }
+
+// setInterval(catchUrl(),5000)
+
+// const buttonLeft = document.querySelector('.bi-chevron-left')
+// const buttonRight = document.querySelector('.bi-chevron-right')
+
+// buttonLeft.addEventListener('click', function(){
+//   let backUrl = JSON.parse(localStorage.getItem('addressBar'))
+//   location.assign(backUrl)
+// })

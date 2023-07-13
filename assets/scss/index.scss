@@ -239,6 +239,11 @@ html::-webkit-scrollbar,
 }
 
 @media screen and (max-width: 992px){
+    header{
+        form{
+            width: 40%;
+        }
+    }
     #container{
         flex-direction: column-reverse;
         height: 100%;
@@ -310,6 +315,11 @@ html::-webkit-scrollbar,
 }
 
 @media screen and (max-width: 580px){
+    header{
+        form{
+            width: 60%;
+        }
+    }
     #homeB span,
     #searchB span,
     #second-ul span{
@@ -339,5 +349,11 @@ html::-webkit-scrollbar,
     }
     .antonio{
         width: 4.5em !important;
+    }
+}
+
+#circle-play{
+    img{
+        cursor: pointer;
     }
 }
