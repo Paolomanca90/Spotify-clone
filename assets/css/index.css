@@ -72,7 +72,7 @@ footer #volumeScrollBar {
   border-radius: 50%;
 }
 .friend .antonio {
-  width: 6.5em;
+  width: 7em;
 }
 
 .center {
@@ -85,7 +85,6 @@ footer #volumeScrollBar {
 
 #center {
   flex-grow: 1;
-  width: 60%;
   height: calc(100vh - 112px);
   overflow: auto;
   background: linear-gradient(180deg, rgb(6, 130, 17) 0%, rgb(30, 31, 30) 25%, rgb(14, 13, 13) 100%);
@@ -203,7 +202,30 @@ html::-webkit-scrollbar,
   width: 30% !important;
 }
 
+@media screen and (max-width: 1200px) {
+  nav {
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  nav {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  nav {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  nav {
+    margin-right: 45px;
+  }
+}
 @media screen and (max-width: 992px) {
+  header form {
+    width: 40%;
+  }
   #container {
     flex-direction: column-reverse;
     height: 100%;
@@ -273,6 +295,9 @@ html::-webkit-scrollbar,
   }
 }
 @media screen and (max-width: 580px) {
+  header form {
+    width: 60%;
+  }
   #homeB span,
   #searchB span,
   #second-ul span {
@@ -281,4 +306,28 @@ html::-webkit-scrollbar,
   #navbarSupportedContent {
     padding-top: 2em !important;
   }
+}
+@media screen and (max-width: 1500px) {
+  .friend {
+    justify-content: center;
+  }
+  .friend div, .friend p {
+    display: none;
+  }
+  .friend .center {
+    width: 0%;
+  }
+  aside {
+    width: 10%;
+    font-size: 0.8em !important;
+  }
+  aside h5 {
+    font-size: 0.8em !important;
+  }
+  .antonio {
+    width: 4.5em !important;
+  }
+}
+#circle-play img {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
