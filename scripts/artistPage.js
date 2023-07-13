@@ -31,10 +31,11 @@ fetch(UrlArtist + artistId)
   })
   .then((artists) => {
     console.log("artists", artists);
-    coverImgRef.style.backgroundImage = `url(${artists.picture_xl})`;
-    coverImgRef.style.backgroundSize = "cover";
-    coverImgRef.style.height = "350px";
-    coverImgRef.style.backgroundPositionY = "35%";
+    centerDiv.style.backgroundImage = `url(${artists.picture_xl})`;
+    centerDiv.style.backgroundRepeat = 'no-repeat'
+    centerDiv.style.backgroundSize = '150%'
+    centerDiv.style.backgroundPositionY = "80%";
+    centerDiv.style.backgroundPositionX = "50%";
     artistNameRef.innerHTML = `
         <h2 class="artistTitle text-light">${artists.name}</h2>
         `;
