@@ -142,9 +142,7 @@ const getAlbum = function () {
                 `;
         firstRow.appendChild(newCol);
         const firstRowDivs = document.querySelectorAll(".spotify-div");
-        console.log(firstRowDivs);
         const firstRowDiv = firstRowDivs[firstRowDivs.length - 1];
-        console.log(firstRowDiv);
         const spotyPlays = document.querySelectorAll(".spotify-play");
         const spotyPlay = spotyPlays[spotyPlays.length - 1];
         firstRowDiv.addEventListener("mouseover", function () {
@@ -168,12 +166,25 @@ const getAlbum = function () {
         // SOURCE SONG
         const songSource = document.getElementById("audioSource");
         const audioElement = document.querySelector("audio");
-        console.log("old source", songSource);
+        const playPauseIcon = document.getElementById("playPause");
         firstRowDiv.addEventListener("dblclick", function () {
           songSource.setAttribute("src", `${data.tracks.data[0].preview}`);
+
+          if (playPauseIcon.classList.contains("bi-play-circle-fill")) {
+            playPauseIcon.classList.toggle("bi-play-circle-fill");
+            playPauseIcon.classList.toggle("bi-pause-circle-fill");
+          }
+
+          //check audio is playing
+          if (!audioElement.paused) {
+            audioElement.pause();
+          } else {
+            audioElement.play();
+          }
+
+          // caricamento e avvio song
           audioElement.load();
           audioElement.play();
-          console.log("new source", songSource);
 
           // Recupero dati per player
           playerImageSongSmall.setAttribute("src", `${data.cover_small}`);
@@ -460,7 +471,6 @@ searchButton.addEventListener("click", searchB);
 const center = document.getElementById("center");
 const header = document.querySelector("header");
 center.addEventListener("scroll", function (e) {
-  console.log(center.scrollTop);
   if (center.scrollTop > 80) {
     header.classList.add("header-color");
   } else {
@@ -469,7 +479,6 @@ center.addEventListener("scroll", function (e) {
 });
 
 const firstRowDiv = document.querySelectorAll(".spotify-div");
-console.log(firstRowDiv);
 firstRowDiv.forEach((el) => {
   console.log(firstRowDiv);
   const spotyPlay = document.querySelector(".spotify-play");

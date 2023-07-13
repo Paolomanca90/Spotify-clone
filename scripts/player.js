@@ -87,10 +87,6 @@ playPauseIcon.addEventListener("click", function () {
 /* JS TO MAKE THE MD AND SM PLAY/PAUSE BUTTON CHANGE AT CLICK*/
 
 const playPauseSmallIcon = document.getElementById("playPauseSmall");
-playPauseSmallIcon.addEventListener("click", function () {
-  playPauseSmallIcon.classList.toggle("bi-play-fill");
-  playPauseSmallIcon.classList.toggle("bi-pause-fill");
-});
 
 //
 //
@@ -100,20 +96,19 @@ const btnPlay = document.getElementById("playPause");
 const audioElement = document.querySelector("audio");
 let playing = false;
 btnPlay.addEventListener("click", () => {
-  if (playing) {
-    playing = !playing;
+  //check audio is playing
+  if (!audioElement.paused) {
     audioElement.pause();
   } else {
-    playing = !playing;
     audioElement.play();
   }
 });
 
 // VOLUME
 const input = document.querySelector("#volume");
-console.log(audioElement.volume);
+audioElement.volume = 0.2;
 input.addEventListener("change", (event) => {
-  audioElement.volume = event.target.value;
+  audioElement.volume = event.target.value / 100;
 });
 
 // TIME SONG
@@ -122,19 +117,19 @@ const playerSongDuration = document.querySelector("#songEndPoint");
 
 audioElement.addEventListener("timeupdate", () => {
   /////Song duration////
-  var minutes = parseInt(audioElement.duration / 60, 10);
-  var seconds = parseInt(audioElement.duration % 60);
+  let minutes = parseInt(audioElement.duration / 60, 10);
+  let seconds = parseInt(audioElement.duration % 60);
   if (minutes < 10) {
     minutes = minutes;
   }
   playerSongDuration.textContent = minutes + ":" + seconds;
 
   /////Passed time////
-  var mins = Math.floor(audioElement.currentTime / 60);
+  let mins = Math.floor(audioElement.currentTime / 60);
   if (mins < 10) {
     mins = String(mins);
   }
-  var secs = Math.floor(audioElement.currentTime % 60);
+  let secs = Math.floor(audioElement.currentTime % 60);
   if (secs < 10) {
     secs = "0" + String(secs);
   }
@@ -152,7 +147,6 @@ function progressUpdate() {
 
 // RESET PLAYER
 audioElement.addEventListener("ended", () => {
-  console.log("ciao");
   btnPlay.dataset.playing = "false";
   // playPauseIcon.classList.toggle("bi-play-circle-fill");
   // playPauseIcon.classList.toggle("bi-pause-fill");
