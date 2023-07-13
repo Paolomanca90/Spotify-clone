@@ -72,7 +72,7 @@ footer #volumeScrollBar {
   border-radius: 50%;
 }
 .friend .antonio {
-  width: 6.5em;
+  width: 7em;
 }
 
 .center {
@@ -200,4 +200,125 @@ html::-webkit-scrollbar,
 
 .nav-expand {
   width: 30% !important;
+}
+
+@media screen and (max-width: 1200px) {
+  nav {
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  nav {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  nav {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  nav {
+    margin-right: 45px;
+  }
+}
+@media screen and (max-width: 992px) {
+  #container {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  #container nav {
+    width: 100%;
+    height: 20% !important;
+  }
+  #container nav .container-fluid {
+    height: 100%;
+    padding-right: 8px !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent {
+    padding-top: 0.5em;
+    flex-direction: row !important;
+    background-color: rgb(24, 24, 24);
+    border-radius: 1em;
+  }
+  #container nav .container-fluid #navbarSupportedContent #magic-div {
+    background-color: transparent !important;
+    border: none;
+  }
+  #container nav .container-fluid #navbarSupportedContent div {
+    background-color: transparent !important;
+    border: none;
+  }
+  #container nav .container-fluid #navbarSupportedContent div button {
+    background-color: transparent !important;
+    border: none;
+  }
+  #container nav .container-fluid #navbarSupportedContent ul {
+    height: calc(100% - 100px);
+    margin-top: 0 !important;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent ul li a,
+  #container nav .container-fluid #navbarSupportedContent ul button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #container nav .container-fluid #navbarSupportedContent ul i {
+    font-size: 2.5em !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent ul li:first-of-type {
+    padding: 0 !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent #nav-links,
+  #container nav .container-fluid #navbarSupportedContent #playlist-section,
+  #container nav .container-fluid #navbarSupportedContent #my-search,
+  #container nav .container-fluid #navbarSupportedContent #library-icons {
+    display: none !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent #second-ul li:last-of-type {
+    display: none !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent #second-ul li:first-of-type {
+    background-color: transparent !important;
+    overflow: hidden;
+    box-shadow: none !important;
+  }
+  #container nav .container-fluid #navbarSupportedContent #second-ul {
+    overflow: visible;
+  }
+}
+@media screen and (max-width: 580px) {
+  #homeB span,
+  #searchB span,
+  #second-ul span {
+    display: none;
+  }
+  #navbarSupportedContent {
+    padding-top: 2em !important;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .friend {
+    justify-content: center;
+  }
+  .friend div, .friend p {
+    display: none;
+  }
+  .friend .center {
+    width: 0%;
+  }
+  aside {
+    width: 10%;
+    font-size: 0.8em !important;
+  }
+  aside h5 {
+    font-size: 0.8em !important;
+  }
+  .antonio {
+    width: 4.5em !important;
+  }
 }/*# sourceMappingURL=index.css.map */

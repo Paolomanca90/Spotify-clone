@@ -130,7 +130,7 @@ const getAlbum = function () {
       })
       .then((data) => {
         let newCol = document.createElement("div");
-        newCol.classList.add("col", "col-6", "col-lg-4");
+        newCol.classList.add("col", "col-12", "col-md-6", "col-lg-4");
         newCol.innerHTML = `
                 <div class="d-flex align-items-center justify-content-between rounded shadow prima-riga spotify-div">
                     <div class="d-flex align-items-center">
@@ -366,7 +366,7 @@ const recentForYou = function () {
   });
 };
 
-const searchForm = document.querySelector("#searchB form");
+const searchForm = document.querySelector("header form");
 searchForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const mySearch = document.querySelector("#searchF");
@@ -459,9 +459,7 @@ const homeButton = document.querySelector("#homeB a");
 homeButton.addEventListener("click", homeB);
 
 const searchB = function () {
-  const searchButton = document.querySelector("#searchB a");
-  searchButton.classList.add("d-none");
-  const searchForm = document.querySelector("#searchB form");
+  const searchForm = document.querySelector("header form");
   searchForm.classList.remove("d-none");
 };
 
@@ -513,12 +511,24 @@ const nav = document.querySelector("nav");
 //   nav.classList.toggle("nav-width");
 // });
 
-const arrow = document.querySelector(".bi-arrow-right-short");
-const arrowLeft = document.querySelector(".bi-arrow-left-short");
-arrow.addEventListener("click", function () {
-  nav.classList.add("nav-expand");
-  arrow.classList.add("d-none");
-  arrowLeft.classList.remove("d-none");
+const library = document.querySelector("#library");
+const spanH = document.querySelector("#homeB span");
+const spanS = document.querySelector("#searchB span");
+const ulSpan = document.querySelector("#second-ul span");
+const navLinks = document.querySelector("#nav-links");
+const playlistS = document.querySelector("#playlist-section");
+const mySearchBox = document.querySelector("#my-search");
+const libIcons = document.querySelector("#library-icons");
+const nav = document.querySelector("nav");
+library.addEventListener("click", function () {
+  spanH.classList.toggle("d-none");
+  spanS.classList.toggle("d-none");
+  ulSpan.classList.toggle("d-none");
+  navLinks.classList.toggle("d-none");
+  playlistS.classList.toggle("d-none");
+  mySearchBox.classList.toggle("d-none");
+  libIcons.classList.toggle("d-none");
+  nav.classList.toggle("nav-width");
 });
 
 // arrowLeft.addEventListener("click", function () {
