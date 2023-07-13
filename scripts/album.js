@@ -10,6 +10,9 @@ fetch(UrlAlbums + albumId)
             throw new Error("Errore nella chiamata API")
         }
     })
+    .then((album)=>{
+        console.log("album", album)
+    })
     .catch((err)=>{
         console.log(err)
     })
