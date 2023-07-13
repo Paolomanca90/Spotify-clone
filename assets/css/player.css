@@ -1,8 +1,6 @@
 /* THIS IS THE CSS FOR THE MUSIC TRACKER AND VOLUME*/
 
 input[type="range"] {
-  height: 25px;
-  -webkit-appearance: none;
   appearance: none;
   margin: 10px 0;
   width: 100%;
@@ -109,12 +107,12 @@ input[type="range"]:focus::-ms-fill-upper {
 
 /* CSS FOR IMAGE CONTAINER */
 
-#imageContainer {
+.imageContainer {
   max-width: 60px;
   max-height: 60px;
 }
 
-#imageContainer img {
+.imageContainer img {
   max-width: 60px;
   max-height: 60px;
 }
@@ -149,3 +147,25 @@ input[type="range"]:focus::-ms-fill-upper {
     font-size: 24px;
   }
 }
+
+
+/* PROGRESS BAR */
+.player-progress {
+  display: flex;
+  position: relative;
+  height: 6px;
+  background: #a3a3a3;
+  border-radius: 25px;
+  margin: 0 5px;
+  flex: 10;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+
+.player-progress-filled {
+  height: 6px;
+  background: red;
+  flex: 0;
+  border-radius: 25px;
+}
+
