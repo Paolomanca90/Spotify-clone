@@ -103,7 +103,7 @@ const getAlbum = function() {
             })
             .then((data) => {
                 let newCol = document.createElement("div")
-                newCol.classList.add("col", "col-6", "col-lg-4")
+                newCol.classList.add("col", "col-12", "col-md-6", "col-lg-4")
                 newCol.innerHTML= `
                 <div class="d-flex align-items-center justify-content-between rounded shadow prima-riga spotify-div">
                     <div class="d-flex align-items-center">
