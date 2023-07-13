@@ -500,26 +500,6 @@ const playlistS = document.querySelector("#playlist-section");
 const mySearchBox = document.querySelector("#my-search");
 const libIcons = document.querySelector("#library-icons");
 const nav = document.querySelector("nav");
-// library.addEventListener("click", function () {
-//   spanH.classList.toggle("d-none");
-//   spanS.classList.toggle("d-none");
-//   ulSpan.classList.toggle("d-none");
-//   navLinks.classList.toggle("d-none");
-//   playlistS.classList.toggle("d-none");
-//   mySearchBox.classList.toggle("d-none");
-//   libIcons.classList.toggle("d-none");
-//   nav.classList.toggle("nav-width");
-// });
-
-const library = document.querySelector("#library");
-const spanH = document.querySelector("#homeB span");
-const spanS = document.querySelector("#searchB span");
-const ulSpan = document.querySelector("#second-ul span");
-const navLinks = document.querySelector("#nav-links");
-const playlistS = document.querySelector("#playlist-section");
-const mySearchBox = document.querySelector("#my-search");
-const libIcons = document.querySelector("#library-icons");
-const nav = document.querySelector("nav");
 library.addEventListener("click", function () {
   spanH.classList.toggle("d-none");
   spanS.classList.toggle("d-none");
