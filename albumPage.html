@@ -224,21 +224,23 @@
               <li><a class="dropdown-item" href="#">Log out</a></li>
             </ul>
           </div>
-          <div class="container d-flex">
-            <div id="cover-album"></div>
-            <div>
+        </header>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 g-5">
+            <div id="cover-album" class="col"></div>
+            <div class="col d-flex flex-column justify-content-around">
               <div>
-                <p class="text-light fw-bold">ALBUM</p>
+                <p class="text-light fw-bold mt-5">ALBUM</p>
               </div>
               <div>
-                <h1 id="album-name"></h1>
+                <h1 id="album-name" class="text-light"></h1>
               </div>
               <div>
-                <p id="album-info"></p>
+                <p id="album-info" class="text-light"></p>
               </div>
             </div>
           </div>
-        </header>
+        </div>
         <main>
           <div class="container">
             <div class="play-follow d-flex align-items-center pt-4">
@@ -442,6 +444,7 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/albumPage.js"></script>
     <!-- <script src="scripts/index.js"></script> -->
     <script src="scripts/player.js"></script>
   </body>
