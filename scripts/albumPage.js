@@ -407,4 +407,14 @@ const setTitle = function () {
   }
 };
 
-setTitle();
+// setTitle()
+
+const center = document.getElementById("center");
+const header = document.querySelector("header");
+center.addEventListener("scroll", function (e) {
+  if (center.scrollTop > 80) {
+    header.classList.add("header-color");
+  } else {
+    header.classList.remove("header-color");
+  }
+})
