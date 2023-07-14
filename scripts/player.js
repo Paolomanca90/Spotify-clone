@@ -44,23 +44,31 @@ heartIcon.addEventListener("click", function () {
   }
 });
 
-/* -----------------------THIS FUNCTION CHANGES THE SHUFFLE ICON COLOR FROM WHITE TO GREEN (AND VICE VERSA) ---------------------*/
+/* -------------------THIS FUNCTION CHANGES THE REPEAT ICON COLOR FROM WHITE TO GREEN, TO REPEAT-1, TO REPEAT WHITE  ------------------*/
 
 const repeatIcon = document.getElementById("repeatIcon");
-const colorToggleRepeat = document.getElementById("colorToggleRepeat");
-let isWhiteRepeat = true;
+let iconValue = 0;
 
-colorToggleRepeat.addEventListener("click", function () {
-  if (isWhiteRepeat) {
-    repeatIcon.style.color = "#34cb1d";
-    isWhiteRepeat = false;
+repeatIcon.addEventListener("click", function () {
+  if (iconValue === 0) {
+    repeatIcon.classList.remove("bi-repeat-1");
+    repeatIcon.classList.add("bi-repeat");
+    repeatIcon.style.color = "green";
+    iconValue = 1;
+  } else if (iconValue === 1) {
+    repeatIcon.classList.remove("bi-repeat");
+    repeatIcon.classList.add("bi-repeat-1");
+    repeatIcon.style.color = "green";
+    iconValue = 2;
   } else {
-    repeatIcon.style.color = "#ffffff";
-    isWhiteRepeat = true;
+    repeatIcon.classList.remove("bi-repeat-1");
+    repeatIcon.classList.add("bi-repeat");
+    repeatIcon.style.color = "white";
+    iconValue = 0;
   }
 });
 
-/* -----------------------THIS FUNCTION CHANGES THE REPEAT ICON COLOR FROM WHITE TO GREEN (AND VICE VERSA) ---------------------*/
+/* -----------------------THIS FUNCTION CHANGES THE SHUFFLE ICON COLOR FROM WHITE TO GREEN (AND VICE VERSA) ---------------------*/
 
 const shuffleIcon = document.getElementById("shuffleIcon");
 const colorToggleShuffle = document.getElementById("colorToggleShuffle");
