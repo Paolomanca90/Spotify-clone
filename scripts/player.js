@@ -168,3 +168,33 @@ progress.addEventListener("click", scrub);
 progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
 progress.addEventListener("mousedown", () => (mousedown = true));
 progress.addEventListener("mouseup", () => (mousedown = false));
+
+/* THIS JS PIECE OF CODE CHANGES THE VOLUME ICON WHEN THE VALUE GOES TO 60/100 OR ABOVE */
+const volumeRange = document.getElementById("volume");
+const volumeIcon = document.getElementById("volumeIcon");
+
+volumeRange.addEventListener("input", function () {
+  const value = parseInt(volumeRange.value);
+  if (value >= 101) {
+    volumeIcon.className = "bi bi-volume-down px-2";
+  } else if (value >= 60) {
+    volumeIcon.className = "bi bi-volume-up px-2";
+  } else {
+    volumeIcon.className = "bi bi-volume-down px-2";
+  }
+});
+
+/* THIS JS PIECE OF CODE CHANGES THE VOLUME ICON WHEN THE VALUE GOES TO 60/100 OR ABOVE */
+const volumeRange = document.getElementById("volume");
+const volumeIcon = document.getElementById("volumeIcon");
+
+volumeRange.addEventListener("input", function () {
+  const value = parseInt(volumeRange.value);
+  if (value >= 101) {
+    volumeIcon.className = "bi bi-volume-down px-2";
+  } else if (value >= 60) {
+    volumeIcon.className = "bi bi-volume-up px-2";
+  } else {
+    volumeIcon.className = "bi bi-volume-down px-2";
+  }
+});

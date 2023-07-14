@@ -3,6 +3,9 @@ const topSongs = "/top?limit=50"
 
 let myUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 
+let searchUrl =
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock"
+
 const coverImgRef = document.getElementById("coverImageArtist")
 const artistNameRef = document.getElementById("artistName")
 const monthlyListenersRef = document.getElementById("monthlyListeners")
@@ -132,19 +135,19 @@ const playlist = [
   "Radio Los Santos",
 ]
 
-const showPlaylist = function () {
-  let ulPlaylist = document.getElementById("lista-playlist")
-  playlist.forEach((playlist) => {
-    let newPlaylist = document.createElement("li")
-    newPlaylist.classList.add("text-secondary")
-    newPlaylist.innerHTML = `
-        <a href="#" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover ms-2">${playlist}</a>
-        `
-    ulPlaylist.appendChild(newPlaylist)
-  })
-}
+// const showPlaylist = function () {
+//   let ulPlaylist = document.getElementById("lista-playlist")
+//   playlist.forEach((playlist) => {
+//     let newPlaylist = document.createElement("li")
+//     newPlaylist.classList.add("text-secondary")
+//     newPlaylist.innerHTML = `
+//         <a href="#" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover ms-2">${playlist}</a>
+//         `
+//     ulPlaylist.appendChild(newPlaylist)
+//   })
+// }
 
-showPlaylist()
+// showPlaylist()
 
 const sezioneCentrale = document.getElementById("center")
 // ANIMAZIONE COVER
@@ -204,10 +207,66 @@ buttonLeft.addEventListener('click', function(){
   history.back();
 })
 
-// const buttonLeft = document.querySelector('.bi-chevron-left')
-// const buttonRight = document.querySelector('.bi-chevron-right')
+buttonRight.addEventListener('click', function(){
+  history.go(+1)
+})
 
-// buttonLeft.addEventListener('click', function(){
-//   let backUrl = JSON.parse(localStorage.getItem('addressBar'))
-//   location.assign(backUrl)
-// })
+const year = function(){
+  const date = new Date()
+  const currentYear = date.getFullYear()
+  return currentYear
+}
+
+const myYear = year()
+
+const yearSpan = document.querySelector('#year')
+yearSpan.innerHTML = myYear
+
+const showPlaylist = function (playlist) {
+  console.log(playlist)
+  let ulPlaylist = document.getElementById("lista-playlist")
+  ulPlaylist.innerHTML = ""
+  playlist.forEach((playlistItem) => {
+    let newPlaylist = document.createElement("li")
+    newPlaylist.classList.add(
+      "text-secondary",
+      "d-flex",
+      "align-items-center",
+      "mb-3"
+    )
+    newPlaylist.innerHTML = `
+      <img class="imgPlaylist" src="${playlistItem.cover_small}" alt="cover"/>
+      <div class="ps-2 d-flex flex-column justify-content-center">
+      <p class="artistPlaylist text-light m-0 p-0">${playlistItem.artist}</p> 
+      <a href="#" class="artistPlaylist link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${playlistItem.title}</a>
+      </div>
+      `
+    ulPlaylist.appendChild(newPlaylist)
+  })
+}
+
+const createPlaylist = function () {
+  fetch(searchUrl)
+    .then((res) => {
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error("Errore nel recupero dei dati")
+      }
+    })
+    .then((data) => {
+      const albumList = data.data.map((item) => {
+        return {
+          title: item.album.title,
+          artist: item.artist.name,
+          cover_small: item.album.cover_small,
+        }
+      })
+      showPlaylist(albumList)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+createPlaylist()

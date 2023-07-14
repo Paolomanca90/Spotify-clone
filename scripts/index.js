@@ -89,7 +89,7 @@ const showPlaylist = function (playlist) {
     );
     newPlaylist.innerHTML = `
       <img class="imgPlaylist" src="${playlistItem.cover_small}" alt="cover"/>
-      <div class="ps-2">
+      <div class="ps-2 d-flex flex-column justify-content-center">
       <p class="artistPlaylist text-light m-0 p-0">${playlistItem.artist}</p> 
       <a href="#" class="artistPlaylist link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">${playlistItem.title}</a>
       </div>
@@ -98,7 +98,7 @@ const showPlaylist = function (playlist) {
   });
 };
 
-const createPlaylist = function (searchUrl) {
+const createPlaylist = function () {
   console.log(searchUrl);
   fetch(searchUrl)
     .then((res) => {
@@ -123,7 +123,7 @@ const createPlaylist = function (searchUrl) {
     });
 };
 
-createPlaylist(searchUrl);
+createPlaylist();
 
 const getAlbum = function () {
   choosenAlbums.forEach((el) => {
@@ -542,3 +542,14 @@ buttonLeft.addEventListener("click", function () {
 buttonRight.addEventListener("click", function () {
   history.go(+1);
 });
+
+const year = function () {
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  return currentYear;
+};
+
+const myYear = year();
+
+const yearSpan = document.querySelector("#year");
+yearSpan.innerHTML = myYear;
