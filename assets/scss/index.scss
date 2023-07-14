@@ -245,7 +245,7 @@ html::-webkit-scrollbar,
 
 @media screen and (max-width:1080px){
     nav{
-        margin-right: 30px;
+        margin-right: 35px;
     }
 }
 
@@ -337,14 +337,43 @@ html::-webkit-scrollbar,
             width: 60%;
         }
     }
-    #homeB span,
-    #searchB span,
-    #second-ul span{
-        display: none;
-    }
     #navbarSupportedContent{
         padding-top: 2em !important;
     }
+    #main-footer{
+        .row{
+            flex-direction: column;
+            .col{
+                padding-bottom: 1em;
+            }
+        }
+        .row:nth-of-type(2){
+            .col{
+                flex-direction: column;
+                padding-bottom: 1em !important;
+            }
+            .col:nth-of-type(2){
+                flex-direction: row;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    #footer{
+        bottom: 10% !important;
+    }
+    #container{
+        nav{
+            height: 10% !important;
+            font-size: 0.9em !important;
+            #navbarSupportedContent{
+                padding-top: 2.8em !important;
+            }
+        }
+    }
+    
 }
 
 @media screen and (max-width: 1500px){

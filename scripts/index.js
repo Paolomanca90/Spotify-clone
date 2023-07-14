@@ -553,3 +553,26 @@ const myYear = year();
 
 const yearSpan = document.querySelector("#year");
 yearSpan.innerHTML = myYear;
+
+const hours = function(){
+  const today = new Date();
+  const now = today.toLocaleTimeString();
+  const hour = now.split(':')[0]
+  const numHour = Number(hour)
+  return numHour
+}
+
+let actualHour = hours()
+ const mainTitle = document.querySelector('main h2')
+
+ const setTitle = function(){
+  if(actualHour < 12){
+    mainTitle.innerHTML = 'Buongiorno'
+  }else if(actualHour < 18){
+    mainTitle.innerHTML = 'Buon pomeriggio'
+  }else{
+    mainTitle.innerHTML = 'Buonasera'
+  }
+ }
+
+ setTitle()
