@@ -154,7 +154,7 @@ input[type="range"]:focus::-ms-fill-upper {
   display: flex;
   position: relative;
   height: 6px;
-  background: #a3a3a3;
+  background: #ffffff1e;
   border-radius: 25px;
   margin: 0 5px;
   flex: 10;
@@ -164,7 +164,7 @@ input[type="range"]:focus::-ms-fill-upper {
 
 .player-progress-filled {
   height: 6px;
-  background: red;
+  background: white;
   flex: 0;
   border-radius: 25px;
 }
