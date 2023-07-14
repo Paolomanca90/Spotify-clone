@@ -74,27 +74,15 @@ colorToggleShuffle.addEventListener("click", function () {
     shuffleIcon.style.color = "#ffffff"
     isWhiteShuffle = true
   }
-})
-
-/* -----------------------THIS FUNCTION CHANGES THE SVG FROM "PLAY" to "PAUSE" --------------------- */
-
-const playPauseIcon = document.getElementById("playPause")
-playPauseIcon.addEventListener("click", function () {
-  playPauseIcon.classList.toggle("bi-play-circle-fill")
-  playPauseIcon.classList.toggle("bi-pause-circle-fill")
-})
-
-/* JS TO MAKE THE MD AND SM PLAY/PAUSE BUTTON CHANGE AT CLICK*/
-
-const playPauseSmallIcon = document.getElementById("playPauseSmall")
+});
 
 //
 //
 // FUNZIONI PLAYER
 
-const btnPlay = document.getElementById("playPause")
-const audioElement = document.querySelector("audio")
-let playing = false
+const btnPlay = document.getElementById("playPause");
+const audioElement = document.querySelector("audio");
+let playing = false;
 btnPlay.addEventListener("click", () => {
   //check audio is playing
   if (!audioElement.paused) {
@@ -102,7 +90,7 @@ btnPlay.addEventListener("click", () => {
   } else {
     audioElement.play()
   }
-})
+});
 
 // VOLUME
 const input = document.querySelector("#volume")
