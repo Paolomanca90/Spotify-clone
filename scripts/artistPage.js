@@ -198,17 +198,24 @@ arrowLeft.addEventListener('click', function(){
     arrowLeft.classList.add('d-none')
 })
 
-// const catchUrl = function(){  
-//   const addressBarContent = document.location.href
-//   localStorage.setItem('addressBar', JSON.stringify(addressBarContent))
-// }
+const buttonLeft = document.querySelector('.bi-chevron-left')
+const buttonRight = document.querySelector('.bi-chevron-right')
 
-// setInterval(catchUrl(),5000)
+buttonLeft.addEventListener('click', function(){
+  history.back()
+})
 
-// const buttonLeft = document.querySelector('.bi-chevron-left')
-// const buttonRight = document.querySelector('.bi-chevron-right')
+buttonRight.addEventListener('click', function(){
+  history.go(+1)
+})
 
-// buttonLeft.addEventListener('click', function(){
-//   let backUrl = JSON.parse(localStorage.getItem('addressBar'))
-//   location.assign(backUrl)
-// })
+const year = function(){
+  const date = new Date()
+  const currentYear = date.getFullYear()
+  return currentYear
+}
+
+const myYear = year()
+
+const yearSpan = document.querySelector('#year')
+yearSpan.innerHTML = myYear

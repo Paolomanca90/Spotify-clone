@@ -133,7 +133,7 @@ const draw = function (img) {
     console.log(mostRecurrentHex)
   }
   
-//   generateImage()
+  generateImage()
   
 
         album.tracks.data.forEach(song => {
@@ -244,9 +244,24 @@ const draw = function (img) {
         arrowLeft.classList.add('d-none')
     })    
 
-    const catchUrl = function(){  
-      const addressBarContent = document.location.href
-      localStorage.setItem('addressBar', JSON.stringify(addressBarContent))
+    const buttonLeft = document.querySelector('.bi-chevron-left')
+    const buttonRight = document.querySelector('.bi-chevron-right')
+    
+    buttonLeft.addEventListener('click', function(){
+      history.back()
+    })
+    
+    buttonRight.addEventListener('click', function(){
+      history.go(+1)
+    })
+    
+    const year = function(){
+      const date = new Date()
+      const currentYear = date.getFullYear()
+      return currentYear
     }
     
-    setInterval(catchUrl(),1000)
+    const myYear = year()
+    
+    const yearSpan = document.querySelector('#year')
+    yearSpan.innerHTML = myYear
