@@ -270,3 +270,126 @@ const createPlaylist = function () {
 }
 
 createPlaylist()
+
+const searchB = function () {
+  const searchForm = document.querySelector("header form")
+  searchForm.classList.remove("d-none")
+}
+
+const searchButton = document.querySelector("#searchB a")
+searchButton.addEventListener("click", searchB)
+
+const homeB = function () {
+  const iconHomeEmpty = document.querySelector("#home-empty")
+  iconHomeEmpty.classList.add("d-none")
+  const iconHomeFill = document.querySelector(".bi-house-door-fill")
+  iconHomeFill.classList.remove("d-none")
+}
+
+const homeButton = document.querySelector("#homeB a")
+homeButton.addEventListener("click", homeB)
+
+const searchForm = document.querySelector("header form")
+searchForm.addEventListener("submit", function (e) {
+  e.preventDefault()
+  const mySearch = document.querySelector("#searchF")
+  const myValue = mySearch.value
+  searchResult(myValue)
+  mySearch.value = ""
+})
+
+const searchResult = function (value) {
+  fetch(myUrl + value)
+    .then((res) => {
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error()
+      }
+    })
+    .then((data) => {
+      firstRow.innerHTML = ""
+      secondRow.innerHTML = ""
+      thirdRow.innerHTML = ""
+      fourthRow.innerHTML = ""
+      choosenAlbums = []
+      for (let i = 0; i < 6; i++) {
+        const randomN = function () {
+          let random = randomNumber()
+          if (choosenAlbums.includes(data.data[random].album.id)) {
+            randomN()
+          } else {
+            choosenAlbums.push(data.data[random].album.id)
+          }
+        }
+        randomN()
+      }
+      getAlbum()
+      forYouAlbum = []
+      for (let i = 0; i < 4; i++) {
+        const randomN = function () {
+          let random = randomNumber()
+          if (forYouAlbum.includes(data.data[random].album.id)) {
+            randomN()
+          } else {
+            forYouAlbum.push(data.data[random].album.id)
+          }
+        }
+        randomN()
+      }
+      createForYou()
+      mixAlbum = []
+      for (let i = 0; i < 4; i++) {
+        const randomN = function () {
+          let random = randomNumber()
+          if (mixAlbum.includes(data.data[random].album.id)) {
+            randomN()
+          } else {
+            mixAlbum.push(data.data[random].album.id)
+          }
+        }
+        randomN()
+      }
+      mixForYou()
+      recentAlbum = []
+      for (let i = 0; i < 4; i++) {
+        console.log("DATA", data.data.length)
+        const randomN = function () {
+          let random = randomNumber()
+          if (recentAlbum.includes(data.data[random].album.id)) {
+            randomN()
+          } else {
+            recentAlbum.push(data.data[random].album.id)
+          }
+        }
+        randomN()
+      }
+      recentForYou()
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+const hours = function(){
+  const today = new Date();
+  const now = today.toLocaleTimeString();
+  const hour = now.split(':')[0]
+  const numHour = Number(hour)
+  return numHour
+}
+
+let actualHour = hours()
+ const mainTitle = document.querySelector('main h2')
+
+ const setTitle = function(){
+  if(actualHour < 12){
+    mainTitle.innerHTML = 'Buongiorno'
+  }else if(actualHour < 18){
+    mainTitle.innerHTML = 'Buon pomeriggio'
+  }else{
+    mainTitle.innerHTML = 'Buonasera'
+  }
+ }
+
+ setTitle()
