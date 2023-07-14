@@ -11,7 +11,7 @@ const songNumberRef = document.getElementById("song-number");
 const songTitleRef = document.getElementById("song-title");
 const songDurationRef = document.getElementById("song-duration");
 const containerCenter = document.getElementById("center");
-const headerPage = document.querySelector("header");
+const headerPage = document.querySelector("#headerClone");
 
 // FUNZIONE COLORE MEDIO
 const draw = function (img) {

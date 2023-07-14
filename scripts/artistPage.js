@@ -393,3 +393,11 @@ let actualHour = hours()
  }
 
  setTitle()
+
+//  // ANIMAZIONE HEADER
+// const sezioneCentrale = document.getElementById("center");
+
+// sezioneCentrale.addEventListener("scroll", () => {
+//   let scrollTop = sezioneCentrale.pageYOffset || sezioneCentrale.scrollTop;
+//   headerPage.style.opacity = 0 + scrollTop / 400;
+// });
