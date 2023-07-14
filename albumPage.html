@@ -179,13 +179,14 @@
       </nav>
       <div id="center" class="rounded mt-2 mx-2 text-light">
         <header
-          class="d-flex justify-content-between p-3 position-sticky z-1 rounded-top"
+          class="d-flex justify-content-between p-3 position-sticky z-2 rounded-top"
         >
+          <!-- Frecce header -->
           <div id="main-buttons">
             <button
               class="btn btn-outline-secondary rounded-circle m-0 left text-bg-dark"
             >
-              <i class="bi bi-chevron-left"></i>
+              <i class="opacity-100 bi bi-chevron-left"></i>
             </button>
             <button
               class="btn btn-outline-secondary rounded-circle m-0 right text-bg-dark"
@@ -203,6 +204,7 @@
             />
             <button class="btn text-bg-dark" type="submit">Cerca</button>
           </form>
+          <!-- Icona omino -->
           <div class="nav-item dropdown">
             <a
               class="nav-link"
@@ -224,9 +226,15 @@
             </ul>
           </div>
         </header>
+        <div
+          id="headerClone"
+          class="position-sticky z-1 rounded-top container-fluid"
+        ></div>
         <div class="container">
           <div class="row row-cols-1 row-cols-md-2 g-5">
-            <div id="cover-album" class="col ms-5"></div>
+            <div id="cover-album" class="col ms-5">
+              <img src="" alt="" crossorigin="anonymous" onload="start()" />
+            </div>
             <div class="col d-flex flex-column justify-content-around">
               <div>
                 <p class="text-light fw-bold mt-5">ALBUM</p>
