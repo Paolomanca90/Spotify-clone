@@ -244,9 +244,13 @@ const draw = function (img) {
         arrowLeft.classList.add('d-none')
     })    
 
-    const catchUrl = function(){  
-      const addressBarContent = document.location.href
-      localStorage.setItem('addressBar', JSON.stringify(addressBarContent))
-    }
-    
-    setInterval(catchUrl(),1000)
+const buttonLeft = document.querySelector('.bi-chevron-left')
+const buttonRight = document.querySelector('.bi-chevron-right')
+
+buttonLeft.addEventListener('click', function(){
+  history.back();
+})
+
+buttonRight.addEventListener('click', function(){
+  history.go(+1)
+})
