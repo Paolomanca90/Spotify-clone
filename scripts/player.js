@@ -53,12 +53,12 @@ repeatIcon.addEventListener("click", function () {
   if (iconValue === 0) {
     repeatIcon.classList.remove("bi-repeat-1");
     repeatIcon.classList.add("bi-repeat");
-    repeatIcon.style.color = "green";
+    repeatIcon.style.color = "#34cb1d";
     iconValue = 1;
   } else if (iconValue === 1) {
     repeatIcon.classList.remove("bi-repeat");
     repeatIcon.classList.add("bi-repeat-1");
-    repeatIcon.style.color = "green";
+    repeatIcon.style.color = "#34cb1d";
     iconValue = 2;
   } else {
     repeatIcon.classList.remove("bi-repeat-1");
