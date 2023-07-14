@@ -202,6 +202,14 @@ html::-webkit-scrollbar,
   width: 30% !important;
 }
 
+.imgPlaylist {
+  height: 2.5em;
+}
+
+.artistPlaylist {
+  font-size: 0.8em;
+}
+
 @media screen and (max-width: 1200px) {
   nav {
     margin-right: 12px;
