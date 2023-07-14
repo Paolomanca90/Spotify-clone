@@ -76,26 +76,13 @@ colorToggleShuffle.addEventListener("click", function () {
   }
 });
 
-/* -----------------------THIS FUNCTION CHANGES THE SVG FROM "PLAY" to "PAUSE" --------------------- */
-
-const playPauseIcon = document.getElementById("playPause");
-playPauseIcon.addEventListener("click", function () {
-  playPauseIcon.classList.toggle("bi-play-circle-fill");
-  playPauseIcon.classList.toggle("bi-pause-circle-fill");
-});
-
-/* JS TO MAKE THE MD AND SM PLAY/PAUSE BUTTON CHANGE AT CLICK*/
-
-const playPauseSmallIcon = document.getElementById("playPauseSmall");
-
 //
 //
 // FUNZIONI PLAYER
-
-const btnPlay = document.getElementById("playPause");
 const audioElement = document.querySelector("audio");
-let playing = false;
-btnPlay.addEventListener("click", () => {
+
+const playPauseIcon = document.getElementById("playPause");
+playPauseIcon.addEventListener("click", () => {
   //check audio is playing
   if (!audioElement.paused) {
     audioElement.pause();
@@ -103,6 +90,19 @@ btnPlay.addEventListener("click", () => {
     audioElement.play();
   }
 });
+
+// ICONA PLAY/PAUSA
+
+const playPauseSmallIcon = document.getElementById("playPauseSmall");
+playPauseIcon.addEventListener("click", function () {
+  playPauseIcon.classList.toggle("bi-play-circle-fill");
+  playPauseIcon.classList.toggle("bi-pause-circle-fill");
+});
+// Bottone su mobile
+// playPauseSmallIcon.addEventListener("click", function () {
+//   playPauseIcon.classList.toggle("bi-play-circle-fill");
+//   playPauseIcon.classList.toggle("bi-pause-circle-fill");
+// });
 
 // VOLUME
 const input = document.querySelector("#volume");
